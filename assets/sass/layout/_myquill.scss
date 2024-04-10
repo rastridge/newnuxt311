@@ -1,0 +1,31 @@
+/* 
+quill adjustments
+*/
+.ql-align-center {
+	text-align: center;
+}
+.ql-align-right {
+	text-align: right;
+}
+.ql-align-left {
+	text-align: left;
+}
+.ql-indent-1,
+.ql-indent-2,
+.ql-indent-3 {
+	background: transparent;
+	margin: 1rem;
+	padding-left: 2rem;
+}
+.ql-font-serif {
+	font-family: serif;
+}
+.ql-size-huge {
+	font-size: xx-large;
+}
+.ql-size-large {
+	font-size: xx-large;
+}
+.ql-size-small {
+	font-size: small;
+}

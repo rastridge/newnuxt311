@@ -1,0 +1,64 @@
+/* primeflex */
+@import 'primeflex/primeflex.scss';
+
+.p-inputtext {
+	color: var(--text-color);
+}
+/* my prineflex composite styles
+*/
+.topsectioncenter {
+	@include styleclass('flex flex-column align-items-center');
+}
+
+.topsectionitem {
+	@include styleclass('w-20rem mt-2 text-center');
+}
+.renderlist-enclosure {
+	@include styleclass('border-1 border-round-lg bg-white m-0 md:m-2 lg:m-3');
+}
+
+.my-renderlist-styles {
+	@include styleclass('p-0 md:p-2');
+}
+.mybutton {
+	@include styleclass(
+		'bg-blue-500 text-white hover:bg-blue-600 border-round transition-colors transition-duration-150 p-3 border-none'
+	);
+}
+.my-simple-card-style {
+	@include styleclass(
+		'bg-white border-round-lg md:border-round-xl shadow-6 m-0 md:m-2 p-1 md:p-2'
+	);
+}
+
+.my-card-style {
+	@include styleclass(
+		'border-round-sm md:border-round-xl shadow-6 m-2 p-2 bg-blue-800 text-white font-semibold'
+	);
+}
+
+.my-form-style {
+	@include styleclass(
+		'mx-auto surface-300 text-xs sm:text-sm md:text-md lg:text-lg border-round-md md:border-round-lg shadow-6 m-2 p-4 w-full md:w-6'
+	);
+}
+
+.my-text-style {
+	@include styleclass('text-xs sm:text-sm md:text-md lg:text-lg');
+}
+
+.my-header-style {
+	@include styleclass(
+		'm-4 text-center font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl'
+	);
+}
+
+.my-datatable-wrapper-style {
+	@include styleclass(
+		'p-2 text-md border-blue-700 border-2 border-round-md md:border-round-lg'
+	);
+}
+
+.my-fileupload-wrapper-style {
+	@include styleclass('w-8 md:w-full border-1 p-2 m-2 border-round-sm');
+}

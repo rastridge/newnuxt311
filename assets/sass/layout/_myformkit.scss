@@ -1,0 +1,30 @@
+/* 
+formkit adjustments
+*/
+.formkit-inner {
+	background-color: rgb(255, 255, 255);
+}
+
+.formkit-input,
+.formkit-input[disabled] {
+	color: var(--text-color);
+}
+
+[data-invalid] .formkit-inner {
+	border-color: red;
+	box-shadow: 0 0 0 1px red;
+}
+
+[data-type='checkbox'] .formkit-inner {
+	background: transparent;
+}
+
+/* [data-complete] .formkit-inner {
+	border-color: green;
+	box-shadow: 0 0 0 1px green;
+} */
+/* [data-complete] .formkit-inner::after {
+	content: '✅';
+	display: block;
+	padding: 0.5em;
+} */

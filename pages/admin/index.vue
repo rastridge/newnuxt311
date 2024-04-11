@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<div class="topsectioncenter">
-			<!-- <div class="w-full md:w-8">
+			<div class="w-full md:w-8">
 				<img :src="asleepatdesk" style="width: 100%" />
-			</div> -->
+			</div>
 
-			<h2 class="text-left">debugging info</h2>
+			<!-- <h2 class="text-left">debugging info</h2>
 			<h3>pinia store auth</h3>
 			<p>Admin user name is {{ auth.user.admin_user_name }}</p>
 			<p>Admin user token is {{ auth.user.token }}</p>
@@ -21,7 +21,7 @@
 			<p>placemark year is {{ placemark.year }}</p>
 			<h3>session</h3>
 			<p>session Admin user name is {{ sess.admin_user_name }}</p>
-			<p>session Admin user token is {{ sess.token }}</p>
+			<p>session Admin user token is {{ sess.token }}</p> -->
 		</div>
 	</div>
 </template>

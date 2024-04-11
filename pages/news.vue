@@ -38,7 +38,6 @@
 				<div class="flex justify-content-center">
 					<div class="my-card-style">
 						<div class="my-header-style">Latest on Instagram</div>
-						<!--  -->
 						<blockquote
 							class="instagram-media"
 							data-instgrm-permalink="https://www.instagram.com/buffalorugbyclub/?utm_source=ig_embed&amp;utm_campaign=loading"

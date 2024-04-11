@@ -7,9 +7,7 @@
 			<div class="topsectionitem">
 				<common-header title="Newsletters Archive" />
 			</div>
-			<div class="topsectionitem">
-				<span v-if="error" class="text-danger">ERROR: {{ error }}</span>
-			</div>
+
 			<div class="topsectionitem">
 				<select-year
 					:startyear="startyear"
@@ -98,7 +96,6 @@
 </template>
 
 <script setup>
-	const error = ref('')
 	//
 	// Select year
 	//
@@ -116,14 +113,10 @@
 	const year_data = ref([])
 
 	const getYearOfNewsletters = async (year) => {
-		const { data, pending, error, refresh } = await useFetch(
-			`/newsletters/year/${year}`,
-			{
-				method: 'get',
-			}
-		)
+		const { data } = await useFetch(`/newsletters/year/${year}`, {
+			method: 'get',
+		})
 		year_data.value = data.value
-		error.value = error
 	}
 	// getYearOfNewsletters(year.value)
 	// get newsletters when  year changes

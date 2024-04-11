@@ -7,9 +7,7 @@
 			<div class="topsectionitem">
 				<common-header title="News Archive" />
 			</div>
-			<div class="topsectionitem">
-				<span v-if="error" class="text-danger">ERROR: {{ error }}</span>
-			</div>
+
 			<div class="topsectionitem">
 				<select-year
 					:startyear="startyear"
@@ -114,14 +112,10 @@
 	const year_data = ref([])
 
 	const getYearOfNews = async (year) => {
-		const { data, pending, error, refresh } = await useFetch(
-			`/news/year/${year}`,
-			{
-				method: 'get',
-			}
-		)
+		const { data } = await useFetch(`/news/year/${year}`, {
+			method: 'get',
+		})
 		year_data.value = data.value
-		error.value = error
 	}
 	// getYearOfNewsletters(year.value)
 	// get newsletters when  year changes
@@ -144,7 +138,7 @@
 	// Get news
 	//
 	const getOne = async (id) => {
-		const { data, pending, error, refresh } = await useFetch(`/news/${id}`, {
+		const { data } = await useFetch(`/news/${id}`, {
 			method: 'get',
 		})
 		selectedItem.value = data.value

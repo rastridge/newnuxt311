@@ -1,75 +1,109 @@
-# Nuxt 3 Minimal Starter
+# NUXT 3 Version of Buffalo Rugby Club Website
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Originally based on
 
-## Setup
+https://github.com/sfxcode/nuxt3-primevue-starter
 
-Make sure to install the dependencies:
+# Overview
 
-```bash
-# npm
-npm install
+- Website created with Vue / Nuxt 3 using vscode editor
+- Stored in repository at Github
+- Build and Deployed at Netlify
+- App server accesses data from mysql database 'buffalorugby' at Dreamhost ISP
+- App uploads and stores images at 'media.buffalorugby.org' at Dreamhost
 
-# pnpm
-pnpm install
+# Project setup and usage
 
-# yarn
+All supporting accounts log in credentials found at buffalorugby.org /admin supporting accounts using username 'rastridge' password ?
+
+## On development machine
+
+Install node:
+
+```
+nvm use stable (v21.5.0)
+```
+
+Install dependencies:
+
+```
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+Run development server:
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
+```
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Use VSCode github feature to commit/push to repository
 
-Build the application for production:
+- github repository "rastridge/newnuxt311"
 
-```bash
-# npm
-npm run build
+## Change to the repository triggers Netlify build
 
-# pnpm
-pnpm run build
+Netlify site "buffalorugby"
 
-# yarn
-yarn build
+- site sourced from github repository "rastridge/newnuxt311"
+- All ENV variables must be registered
 
-# bun
-bun run build
+- Set up Netlify custom external domain for site 'buffalorugby.org' via Dreamhost while maintaining ssh and email functions and 'media.buffalorugby.org' on domain buffalorugby.org at Dreamhost
+
+```
+https://superchlorine.com/2021/01/how-to-set-up-netify-custom-domain-via-dreamhost/
 ```
 
-Locally preview production build:
+# Supporting APIs
 
-```bash
-# npm
-npm run preview
+A number of outside services are used to implement apps
 
-# pnpm
-pnpm run preview
+## Sending Emails
 
-# yarn
-yarn preview
+ElasticEmail
+setup and Usage
 
-# bun
-bun run preview
+```
+https://app.elasticemail.com/login
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Sending Text Messages
+
+- Twilio - text messaging
+
+```
+https://www.twilio.com/login
+```
+
+## API to support image uploads and requests
+
+- Dreamhost - media.buffalorugby.org
+
+```
+https://panel.dreamhost.com/
+```
+
+Setup
+
+DANGER - all images are stored in 'public' - DO NOT OVERWRITE
+
+- Upload js server '~/Code/brc.org.nuxt3/nuxt3-brc-media-api' to dreamhost
+
+```
+rsync -av --delete --exclude "ecosystem.config.js" --exclude "app.js" --exclude "/public" --exclude "logs" --exclude "/node_modules" --exclude ".git" --exclude ".gitignore" ~/Code/brc.org.nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
+```
+
+- enable Proxy server on media.buffalorugby.org
+
+```
+alias shell='ssh rastridge@vps30249.dreamhostps.com'
+```
+
+Maintain server with pm2
+
+- Start server
+
+```
+pm2 ecosystem.config.js
+```
+
+- cronjob to restart servers using 'pm2 resurrect'

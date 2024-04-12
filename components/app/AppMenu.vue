@@ -7,12 +7,12 @@
 			<template #item="{ item, props, hasSubmenu }">
 				<nuxt-link
 					:to="item.route"
-					class="text-800 hover:text-500 text-sm md:text-base md:text-lg"
+					class="text-800 text-sm md:text-base lg:text-lg"
 				>
-					<span class="ml-4"></span>
+					<span class="ml-1"></span>
 					<span :class="item.icon"></span>
-					<span class="ml-2">{{ item.label }}</span>
-					<span v-if="hasSubmenu" class="pi pi-fw pi-angle-down ml-2" />
+					<span class="ml-1">{{ item.label }}</span>
+					<span v-if="hasSubmenu" class="pi pi-fw pi-angle-down ml-1" />
 				</nuxt-link>
 			</template>
 		</Menubar>

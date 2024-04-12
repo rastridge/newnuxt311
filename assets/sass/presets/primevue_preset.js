@@ -24,6 +24,31 @@ const pvPreset = {
 			},
 		},
 	},
+	menubar: {
+		root: {
+			style: {
+				'background-color': '#transparent',
+				'border-radius': '10px',
+			},
+		},
+		menu: {
+			style: {
+				'background-color': '#transparent',
+			},
+		},
+		submenu: {
+			style: {
+				'background-color': '#transparent',
+			},
+		},
+
+		content: {
+			style: {
+				padding: '0.5rem',
+				'background-color': '#transparent',
+			},
+		},
+	},
 }
 
 export default pvPreset

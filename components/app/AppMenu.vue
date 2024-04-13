@@ -5,14 +5,17 @@
 				<img alt="logo" src="~/assets/imgs/bflo_blue.png" height="40" />
 			</template>
 			<template #item="{ item, props, hasSubmenu }">
-				<nuxt-link
-					:to="item.route"
-					class="text-800 text-sm md:text-base lg:text-lg"
-				>
-					<span class="ml-1"></span>
-					<span :class="item.icon"></span>
-					<span class="ml-1">{{ item.label }}</span>
-					<span v-if="hasSubmenu" class="pi pi-fw pi-angle-down ml-1" />
+				<nuxt-link :to="item.route">
+					<span class="ml-2 text-700 text-sm md:text-base lg:text-lg">{{
+						item.label
+					}}</span>
+
+					<span v-if="!hasSubmenu" class="mr-2 ml-2" />
+
+					<span
+						v-if="hasSubmenu"
+						class="pi pi-fw pi-angle-down ml-1 mr-2 md:mr-4 lg:mr-6"
+					/>
 				</nuxt-link>
 			</template>
 		</Menubar>
@@ -23,3 +26,5 @@
 	const navigation = useNavigationMenu()
 	const menu_items = navigation.navigationMenu()
 </script>
+
+ml-2 md:ml-2 lg:ml-6

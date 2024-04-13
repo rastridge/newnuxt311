@@ -24,6 +24,44 @@ const pvPreset = {
 			},
 		},
 	},
+	card: {
+		root: {
+			style: {
+				minWidth: '10rem',
+				'background-color': '#CCC',
+			},
+			class: 'shadow-4 m-1 p-1 border-round-lg',
+		},
+		header: {
+			style: {
+				'background-color': '#CCC',
+			},
+		},
+		title: {
+			style: {
+				color: '#000',
+			},
+			class: 'text-black text-lg text-center',
+		},
+		subtitle: {
+			style: {
+				color: '#000',
+			},
+		},
+		body: {
+			style: {
+				padding: '1rem',
+				'background-color': '#CCC',
+				color: '#000',
+			},
+		},
+		footer: {
+			style: {
+				'background-color': '#CCC',
+			},
+		},
+	},
+
 	menubar: {
 		root: {
 			style: {
@@ -44,7 +82,7 @@ const pvPreset = {
 
 		content: {
 			style: {
-				padding: '0.5rem',
+				padding: '0.3rem',
 				'background-color': '#transparent',
 			},
 		},

@@ -9,7 +9,7 @@
 			</div>
 			<!-- Paypal-->
 			<div class="topsectionitem mb-2">
-				<Card class="my-card-style">
+				<Card>
 					<template #content>
 						<h5>Paypal</h5>
 						<form
@@ -43,7 +43,7 @@
 			</div>
 			<!-- check-->
 			<div class="topsectionitem mb-2">
-				<Card class="my-card-style">
+				<Card>
 					<template #content>
 						<p>
 							Mail check payable to <br />Buffalo Rugby Alumni Fund<br />

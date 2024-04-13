@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="my-header-style">{{ direction }} Matches</div>
-		<Card style="width: 320px" class="my-card-style">
+		<Card style="width: 320px">
 			<!-- <template #header> </template> -->
 			<template #content>
 				<table class="nowrap">

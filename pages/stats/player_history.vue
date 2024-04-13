@@ -8,7 +8,7 @@
 				<CommonHeader title="Player game history" />
 			</div>
 			<div class="topsectionitem">
-				<Card class="my-card-style h-3 mb-2">
+				<Card class="h-3 mb-2">
 					<template #title> Player name</template>
 					<template #content>
 						<AutoComplete

@@ -21,7 +21,7 @@
 				class="flex flex-column md:flex-row flex-wrap align-items-center md:align-items-start justify-content-center gap-2"
 			>
 				<div class="flex justify-content-center">
-					<div class="my-card-style">
+					<div>
 						<div class="my-header-style">Latest on Facebook</div>
 						<iframe
 							src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBuffaloRugbyClub%2F&tabs=timeline&width=340&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 				<div class="flex justify-content-center">
-					<div class="my-card-style">
+					<div>
 						<div class="my-header-style">Latest on Instagram</div>
 						<blockquote
 							class="instagram-media"
@@ -308,41 +308,24 @@
 					v-for="item in news"
 					:key="item.news_id"
 					style="width: 320px"
-					class="flex justify-content-center my-card-style"
+					class="flex justify-content-center"
 				>
 					<template #title>
 						<span class="text-sm">
 							{{ $dayjs(item.dt).format('MMM D, YYYY') }} </span
 						><br />
-						<div
-							class="shadow-6 surface-400 text-gray-900 p-1 m-1 border-round-lg text-lg text-center"
-						>
+						<span>
 							{{ item.news_title }}
-						</div>
+						</span>
 					</template>
 					<template #subtitle>
-						<span class="text-white font-bold"
-							>{{ item.news_synop }}
-						</span></template
+						<span class="">{{ item.news_synop }} </span></template
 					>
 
 					<template #footer>
-						<button
-							style="
-								border-radius: 15px;
-								background: #e0e0e0;
-								border-radius: 50px;
-								background: transparent;
-								box-shadow: 2px 2px 6px #c7c7c7, -2px -2px 6px #f9f9f9;
-							"
+						<a href="#" @click.prevent="openModal(item)"
+							><span class="m-2">Read More</span></a
 						>
-							<a href="#" @click.prevent="openModal(item)"
-								><span class="p-1 text-white">Read More</span></a
-							>
-						</button>
-						<!-- 						<a href="#" @click.prevent="openModal(item)"
-							><span class="text-white">Read More</span></a
-						> -->
 					</template>
 				</Card>
 			</div>

@@ -3,7 +3,7 @@
 		<Head>
 			<Title>Buffalo Rugby Club Community Service</Title>
 		</Head>
-		<Card class="w-full my-card-style">
+		<Card class="w-full">
 			<template #title
 				><div class="my-text-style text-center">
 					Community Service - Habitat for Humanity
@@ -29,7 +29,7 @@
 
 				<!-- <Card class="w-30rem lg:w-40rem flex align-items-start justify-content-center border-round m-2"> -->
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">Before</div></template
@@ -43,7 +43,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">After</div></template
@@ -57,7 +57,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -73,7 +73,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -89,7 +89,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -105,7 +105,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -121,7 +121,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -137,7 +137,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -153,7 +153,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -169,7 +169,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -185,7 +185,7 @@
 				</Card>
 
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">
@@ -200,7 +200,7 @@
 					/></template>
 				</Card>
 				<Card
-					class="w-30rem lg:w-40rem flex align-items-start justify-content-center my-card-style"
+					class="w-30rem lg:w-40rem flex align-items-start justify-content-center"
 				>
 					<template #title
 						><div class="my-text-style text-center">

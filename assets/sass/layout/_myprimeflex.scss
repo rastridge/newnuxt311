@@ -31,11 +31,11 @@
 	);
 }
 
-.my-card-style {
+/* .my-card-style {
 	@include styleclass(
 		'border-round-sm md:border-round-xl shadow-6 m-2 p-2 bg-blue-800 text-white font-semibold'
 	);
-}
+} */
 
 .my-form-style {
 	@include styleclass(

@@ -140,7 +140,7 @@ export function useNavigationMenu() {
 						route: '/clubhouse',
 					},
 					{
-						label: 'Document Archive',
+						label: 'Old Documents',
 						icon: 'pi pi-fw pi-folder-open',
 						route: '/archives/documents',
 					},
@@ -150,12 +150,12 @@ export function useNavigationMenu() {
 						route: '/leaders',
 					},
 					{
-						label: 'News Archive',
+						label: 'Old News',
 						icon: 'pi pi-fw pi-folder-open',
 						route: '/archives/news',
 					},
 					{
-						label: 'Newsletters Archive',
+						label: 'Old Newsletters',
 						icon: 'pi pi-fw pi-folder-open',
 						route: '/archives/newsletters',
 					},
@@ -175,11 +175,11 @@ export function useNavigationMenu() {
 						route: '/videos',
 					},
 
-					{
+					/* 					{
 						label: '50th Anniversary',
 						icon: 'pi pi-fw pi-folder-open',
 						route: '/sponsors',
-					},
+					}, */
 				],
 			},
 			{
@@ -223,7 +223,7 @@ export function useNavigationMenu() {
 						visible: () => checkPerm('contributions') > 0,
 					},
 					{
-						label: 'Document Archive',
+						label: 'Old Documents',
 						icon: 'pi pi-fw pi-user-edit',
 						route: '/admin/archive',
 						visible: () => checkPerm('archive') > 0,

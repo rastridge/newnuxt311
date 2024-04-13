@@ -14,11 +14,11 @@
 				v-for="item in payments"
 				:key="item.id"
 				style="width: 320px"
-				class="flex justify-content-center my-card-style"
+				class="flex justify-content-center"
 			>
 				<!-- <template #header> {{ item.title }}</template> -->
-				<template #subtitle>
-					<span class="text-white font-bold">{{ item.title }}</span></template
+				<template #title>
+					<span>{{ item.title }}</span></template
 				>
 				<template #content>
 					<span v-html="item.payment_paypal_button"></span

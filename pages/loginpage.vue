@@ -1,11 +1,9 @@
 <template>
 	<div id="loginpage">
 		<div class="topsectioncenter">
-			<div v-if="!auth.isLoggedIn" class="topsectionitem my-card-style p-3">
+			<div v-if="!auth.isLoggedIn" class="topsectionitem p-3">
 				<div class="text-center mb-5">
-					<div class="text-white md:text-xl font-medium mb-3">
-						Login Admin User
-					</div>
+					<div class="md:text-xl font-medium mb-3">Login Admin User</div>
 				</div>
 				<FormKit type="form" submit-label="Login" @submit="handleSubmit">
 					<display-alert />

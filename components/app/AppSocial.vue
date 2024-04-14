@@ -1,6 +1,6 @@
 <template>
-	<div class="border- border-white border-round-sm md:border-round-lg">
-		<ul class="flex gap-1 border- border-white w-40rem lg:w-10 xl:w-8 mx-auto">
+	<div class="">
+		<ul class="flex lg:w-10 xl:w-8 mx-auto">
 			<li>
 				<Button
 					link

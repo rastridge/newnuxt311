@@ -3,7 +3,7 @@
 		<div class="flex align-items-center justify-content-center">
 			<span
 				style="letter-spacing: 0.1em; font-family: sans-serif"
-				class="text-6xl md:text-7xl lg:text-7xl xl:text-8xl uppercase font-bold font-itali"
+				class="text-5xl md:text-7xl lg:text-7xl xl:text-8xl uppercase font-bold font-itali"
 				>Buffalo</span
 			>
 		</div>
@@ -13,7 +13,7 @@
 		<div class="flex align-items-center justify-content-center">
 			<span
 				style="letter-spacing: 0.1em; font-family: sans-serif"
-				class="text-6xl md:text-7xl lg:text-7xl xl:text-8xl uppercase font-bold"
+				class="text-5xl md:text-7xl lg:text-7xl xl:text-8xl uppercase font-bold"
 				>Rugby</span
 			>
 		</div>

@@ -10,116 +10,116 @@
 
 			<!-- make labels -->
 			<div class="topsectionitem">
-				<Button class="mb-3" @click="makeLabels"> Make labels </Button>
+				<Card>
+					<template #content>
+						<Button class="mb-3" @click="makeLabels"> Make labels </Button>
+					</template>
+				</Card>
 			</div>
 
-			<!-- slect member_type -->
-
-			<FormKit
-				type="select"
-				label="Member type"
-				placeholder="Select member type"
-				v-model="member_type_id"
-				:options="memberTypeOptions"
-				validation="required"
-			/>
-
 			<div class="topsectionitem">
-				<div class="my-simple-card-style">
-					<table class="my-text-style">
-						<tr>
-							<th>Select filters</th>
-							<th>Yes</th>
-							<th>No</th>
-							<th>NA</th>
-						</tr>
-						<tr>
-							<td class="text-right">Good Email</td>
-							<td>
-								<input type="radio" v-model="email" value="1" />
-							</td>
-							<td>
-								<input type="radio" v-model="email" value="0" />
-							</td>
-							<td>
-								<input type="radio" v-model="email" value="2" />
-							</td>
-						</tr>
+				<Card>
+					<template #content>
+						<p class="my-subheader-style">Members Info</p>
 
-						<tr>
-							<td class="text-right">Marked for emailing</td>
-							<td>
-								<input type="radio" v-model="marked_for_email" value="1" />
-							</td>
-							<td>
-								<input type="radio" v-model="marked_for_email" value="0" />
-							</td>
-							<td>
-								<input type="radio" v-model="marked_for_email" value="2" />
-							</td>
-						</tr>
+						<FormKit
+							type="select"
+							label="Select member type"
+							placeholder="Select member type"
+							v-model="member_type_id"
+							:options="memberTypeOptions"
+							validation="required"
+						/>
+						<table class="my-text-style">
+							<tr>
+								<th>Filter by</th>
+								<th>Yes</th>
+								<th>No</th>
+								<th>NA</th>
+							</tr>
+							<tr>
+								<td class="text-right">Good Email</td>
+								<td>
+									<input type="radio" v-model="email" value="1" />
+								</td>
+								<td>
+									<input type="radio" v-model="email" value="0" />
+								</td>
+								<td>
+									<input type="radio" v-model="email" value="2" />
+								</td>
+							</tr>
 
-						<tr>
-							<td class="text-right">Email Opened in last 90 days</td>
-							<td>
-								<!-- Yes -->
-								<input type="radio" v-model="email_opened" value="1" />
-							</td>
-							<td>
-								<!-- No  -->
-								<input type="radio" v-model="email_opened" value="0" />
-							</td>
-							<td>
-								<!-- Does not apply  -->
-								<input type="radio" v-model="email_opened" value="2" />
-							</td>
-						</tr>
+							<tr>
+								<td class="text-right">Marked for emailing</td>
+								<td>
+									<input type="radio" v-model="marked_for_email" value="1" />
+								</td>
+								<td>
+									<input type="radio" v-model="marked_for_email" value="0" />
+								</td>
+								<td>
+									<input type="radio" v-model="marked_for_email" value="2" />
+								</td>
+							</tr>
 
-						<tr>
-							<td class="text-right">Good Address</td>
-							<td>
-								<input type="radio" v-model="address" value="1" />
-							</td>
-							<td>
-								<input type="radio" v-model="address" value="0" />
-							</td>
-							<td>
-								<input type="radio" v-model="address" value="2" />
-							</td>
-						</tr>
-						<tr>
-							<td class="text-right">Marked for mailing (calendar)</td>
-							<td>
-								<input type="radio" v-model="marked_for_mail" value="1" />
-							</td>
-							<td>
-								<input type="radio" v-model="marked_for_mail" value="0" />
-							</td>
-							<td>
-								<input type="radio" v-model="marked_for_mail" value="2" />
-							</td>
-						</tr>
+							<tr>
+								<td class="text-right">Email Opened in last 90 days</td>
+								<td>
+									<!-- Yes -->
+									<input type="radio" v-model="email_opened" value="1" />
+								</td>
+								<td>
+									<!-- No  -->
+									<input type="radio" v-model="email_opened" value="0" />
+								</td>
+								<td>
+									<!-- Does not apply  -->
+									<input type="radio" v-model="email_opened" value="2" />
+								</td>
+							</tr>
 
-						<tr>
-							<td class="text-right">Donated</td>
-							<td>
-								<input type="radio" v-model="donated" value="1" />
-							</td>
-							<td>
-								<input type="radio" v-model="donated" value="0" />
-							</td>
-							<td>
-								<input type="radio" v-model="donated" value="2" />
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+							<tr>
+								<td class="text-right">Good Address</td>
+								<td>
+									<input type="radio" v-model="address" value="1" />
+								</td>
+								<td>
+									<input type="radio" v-model="address" value="0" />
+								</td>
+								<td>
+									<input type="radio" v-model="address" value="2" />
+								</td>
+							</tr>
+							<tr>
+								<td class="text-right">Marked for mailing (calendar)</td>
+								<td>
+									<input type="radio" v-model="marked_for_mail" value="1" />
+								</td>
+								<td>
+									<input type="radio" v-model="marked_for_mail" value="0" />
+								</td>
+								<td>
+									<input type="radio" v-model="marked_for_mail" value="2" />
+								</td>
+							</tr>
 
-			<!-- filteredData[0] === {{ filteredData[0] }} -->
-			<div class="topsectionitem">
-				<!-- Total records -->
-				<p class="my-header-style">Selected records count {{ rows }}</p>
+							<tr>
+								<td class="text-right">Donated</td>
+								<td>
+									<input type="radio" v-model="donated" value="1" />
+								</td>
+								<td>
+									<input type="radio" v-model="donated" value="0" />
+								</td>
+								<td>
+									<input type="radio" v-model="donated" value="2" />
+								</td>
+							</tr>
+						</table>
+						<p class="my-subheader-style">Selected records count {{ rows }}</p>
+					</template>
+				</Card>
 			</div>
 		</div>
 		<div class="renderlist-enclosure">
@@ -154,7 +154,7 @@
 				>
 					<template #body="slotProps">
 						<div>
-							{{ $dayjs(slotProps.data.modified_dt).format('ll') }}
+							{{ $dayjs(slotProps.data.modified_dt).format('YYYY MMM D') }}
 						</div>
 					</template>
 				</Column>
@@ -186,7 +186,11 @@
 				<Column field="account_email_opening" header="Last email opening">
 					<template #body="slotProps">
 						<div>
-							{{ $dayjs(slotProps.data.account_email_opening).format('ll') }}
+							{{
+								$dayjs(slotProps.data.account_email_opening).format(
+									'YYYY MMM D'
+								)
+							}}
 						</div>
 					</template>
 				</Column>

@@ -49,8 +49,12 @@
 
 .my-header-style {
 	@include styleclass(
-		'm-4 text-center font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl'
+		'm-4 text-center font-semibold text-lg md:text-2xl lg:text-3xl'
 	);
+}
+
+.my-subheader-style {
+	@include styleclass('m-4 text-center text-lg md:text-xl lg:text-2xl');
 }
 
 .my-datatable-wrapper-style {

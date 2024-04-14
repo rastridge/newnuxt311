@@ -52,7 +52,7 @@
 						</Column>
 					</div>
 					<div v-else>
-						<Column field="dt" header="Date">
+						<Column field="dt" header="Modified">
 							<template #body="slotProps">
 								{{ $dayjs(slotProps.data.dt).format('MMM D, YYYY') }}
 							</template>

@@ -6,20 +6,20 @@
 		<div class="center-content">
 			<common-header title="Sponsors" />
 		</div>
-		<div class="my-simple-card-style">
+		<div>
 			<Card v-for="item in sponsors" :key="item.id">
 				<template #header>
-					<span class="text-xl">{{ item.ad_client_name }}</span></template
+					<div class="text-xl font-semibold text-center pt-2">
+						{{ item.ad_client_name }}
+					</div></template
 				>
 				<template #subtitle>
 					<div class="flex flex-row flex-wrap">
 						<div class="flex align-items-center justify-content-center w-10rem">
-							<span class="text-white">{{ item.ad_client_contact }}</span>
+							<span>{{ item.ad_client_contact }}</span>
 						</div>
 						<div class="flex align-items-center justify-content-center w-20rem">
-							<span class="text-white"
-								><expose-email :email="item.ad_client_email"
-							/></span>
+							<span><expose-email :email="item.ad_client_email" /></span>
 						</div>
 					</div>
 				</template>

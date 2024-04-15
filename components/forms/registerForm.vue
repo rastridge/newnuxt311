@@ -1,7 +1,5 @@
 <template>
 	<div>
-		<Button label="Show" @click="visible = true" />
-
 		<div class="my-form-style">
 			<FormKit
 				type="form"

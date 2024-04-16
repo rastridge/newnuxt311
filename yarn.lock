@@ -1031,7 +1031,7 @@
     which "^3.0.1"
     ws "^8.16.0"
 
-"@nuxt/eslint-config@0.3.7":
+"@nuxt/eslint-config@0.3.7", "@nuxt/eslint-config@^0.3.7":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@nuxt/eslint-config/-/eslint-config-0.3.7.tgz#a71c48241a969edb99f3ba5b6cbce9d02cc443cc"
   integrity sha512-Pm3bf/XfbG9r/C76BSbeEquu3gXSsjoQYbILQP/peVBEM1gSJM2rPMmawfgV7V13UORpFBXhhk5hKQ3p7Auwkg==

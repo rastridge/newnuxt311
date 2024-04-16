@@ -37,10 +37,10 @@ async function _setPerms(aPerms, id) {
 	await doDBQueryBuffalorugby(sql)
 
 	// loop through permissions array
-	aPerms.forEach(myFunction)
+	aPerms.forEach(newPerm)
 
 	// add new permission record
-	async function myFunction(value, index) {
+	async function newPerm(value) {
 		const sql = `INSERT
 								INTO inbrc_admin_perms
 										(
@@ -189,7 +189,7 @@ async function addOne({ admin_user_name, password, admin_user_email, perms }) {
 		let sql = `select *
 							from inbrc_admin_users
 							where deleted = 0`
-		const [rows, fields] = await conn.execute(sql)
+		const [rows] = await conn.execute(sql)
 		const users = rows
 
 		const lc_admin_user_name = admin_user_name.toLowerCase()
@@ -221,7 +221,7 @@ async function addOne({ admin_user_name, password, admin_user_email, perms }) {
 			let inserts = []
 			inserts.push(lc_admin_user_name, hashedpassword, lc_admin_user_email)
 			sql = mysql.format(sql, inserts)
-			const [rows, fields] = await conn.execute(sql)
+			const [rows] = await conn.execute(sql)
 			user = rows
 			// save id of new user
 			const id = user.insertId
@@ -297,7 +297,7 @@ async function editOne(info) {
 							FROM inbrc_admin_users
 							WHERE
 								deleted = 0 AND admin_user_id !=  ${admin_user_id}`
-		const [rows, fields] = await conn.execute(sql)
+		const [rows] = await conn.execute(sql)
 		const users = rows
 
 		const lc_admin_username = admin_user_name.toLowerCase()
@@ -387,14 +387,14 @@ async function editOne(info) {
 			}
 
 			// send email notification
-			//
-			// sendEmail(
-			// 	'ron.astridge@me.com',
-			// 	'BRC Admin Account Modification',
-			// 	'The account for admin user ' +
-			// 		lc_admin_username +
-			// 		'  has been modified'
-			// )
+
+			sendEmail(
+				'ron.astridge@me.com',
+				'BRC Admin Account Modification',
+				'The account for admin user ' +
+					lc_admin_username +
+					'  has been modified'
+			)
 		} else {
 			msg =
 				'An admin with this username ' +
@@ -403,13 +403,6 @@ async function editOne(info) {
 				lc_admin_user_email +
 				' already exists'
 		}
-		/* 		msg =
-			'An admin with this username ' +
-			lc_admin_username +
-			' or email ' +
-			lc_admin_user_email +
-			' already exists'
-		console.log('IN userservice 4 ', 'msg = ', msg) */
 
 		await conn.query('COMMIT')
 		await conn.end()
@@ -512,8 +505,7 @@ async function resetRequest({ username }) {
 	// if username exists
 	if (cnt) {
 		const msg =
-			// 'To reset your user admin password <a href="https://main--peaceful-tarsier-458ff9.netlify.app/reset/' +
-			'To reset your user admin password <a href="http://localhost:3000/reset/' +
+			'To reset your user admin password <a href="https://buffalorugby.orgreset/' +
 			username +
 			'" rel="noopener noreferrer" target="_blank" >Click here</a>'
 
@@ -538,8 +530,8 @@ async function resetPassword({ username, password }) {
 	const hashedpassword = await bcrypt.hashSync(password, 10)
 	const inserts = []
 	inserts.push(hashedpassword, username)
-	const result = await doDBQueryBuffalorugby(sql, inserts)
-
+	await doDBQueryBuffalorugby(sql, inserts)
+	console.log('sendMail ', username)
 	sendEmail(
 		'ron.astridge@me.com',
 		'BRC Member Account Modification',

@@ -261,8 +261,6 @@ async function registerBallot({ account_email, answers }) {
 }
 
 async function sendBallot({ email }) {
-	// const { email } = emailx
-	console.log(email)
 	const htmlBody =
 		'<h3>Heads up: </h3><h3>There may be more than one available question on which to vote. If so, the next question will come up when the current one is submitted.</h3>' +
 		'<br>' +

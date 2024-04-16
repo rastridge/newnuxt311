@@ -13,7 +13,11 @@ export default function useEmail() {
 		newsletter_id
 	) {
 		// local function
-		function composeEmail(recipient, newsletter_body_html, newsletter_subject) {
+		function composeEmailHelper(
+			recipient,
+			newsletter_body_html,
+			newsletter_subject
+		) {
 			// this should work if and when email works
 			const TRACKING = `${HOSTING}/newsletters/track?account_id=${recipient.account_id}&newsletter_id=${newsletter_id}`
 			// const TRACKINGPIXEL = `<img src="${TRACKING}" height="1" width="1"  />`
@@ -135,7 +139,7 @@ export default function useEmail() {
 		}
 
 		// local function
-		function sendEmail(to, subject, message) {
+		function sendEmailHelper(to, subject, message) {
 			const post_data = querystring.stringify({
 				api_key: CONFIG.EE_API_KEY,
 				subject: subject,
@@ -184,12 +188,12 @@ export default function useEmail() {
 
 		let i = 0
 		do {
-			email = await composeEmail(
+			email = await composeEmailHelper(
 				recipientss[i],
 				newsletter_body_html,
 				newsletter_subject
 			)
-			await sendEmail(email.to, email.subject, email.message)
+			await sendEmailHelper(email.to, email.subject, email.message)
 			sentlist.push(email.to)
 			i++
 		} while (i < recipientss.length)

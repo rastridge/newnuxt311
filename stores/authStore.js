@@ -16,7 +16,7 @@ export const useAuthStore = defineStore('auth', {
 
 	actions: {
 		navigate(p) {
-			const router = useRouter()
+			// const router = useRouter()
 			return navigateTo({
 				path: p,
 			})

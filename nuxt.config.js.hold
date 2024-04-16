@@ -39,6 +39,7 @@ export default defineNuxtConfig({
 		'dayjs-nuxt',
 		'@formkit/nuxt',
 		'@nuxt/image',
+		'@nuxt/eslint',
 	],
 
 	primevue: {

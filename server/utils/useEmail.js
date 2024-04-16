@@ -126,12 +126,8 @@ export default function useEmail() {
 									</html>`
 
 			const email = {
-				// from: CONFIG.FROM,
-				// fromName: CONFIG.FROM_NAME,
 				to: recipient.account_email,
 				subject: newsletter_subject,
-				// body_text: '',
-				// body_html: BEGIN_HTML + newsletter_body_html + NEWSLETTER_END_STYLES,
 				message: BEGIN_HTML + newsletter_body_html + NEWSLETTER_END_STYLES,
 			}
 			// return email
@@ -140,10 +136,6 @@ export default function useEmail() {
 
 		// local function
 		function sendEmail(to, subject, message) {
-			/* console.log(
-				'IN sendEmail ',
-				`to = ${to}  subject = ${subject} HOSTiNG = ${HOSTING} CONFIG.EE_API_KEY = ${CONFIG.EE_API_KEY}`
-			) */
 			const post_data = querystring.stringify({
 				api_key: CONFIG.EE_API_KEY,
 				subject: subject,
@@ -182,28 +174,10 @@ export default function useEmail() {
 			post_req.write(post_data)
 			post_req.end()
 
-			return to
+			return result
 		}
 
-		//
-		// self invoking function, passing the number of iterations as an argument
-		// very cute - https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
-		// Using recursion
-		// Send emails to Elasticemail slowly	//
-
 		const rec_cnt = recipientss.length
-
-		/* 		;(function myLoop(i) {
-			setTimeout(function () {
-				const email = composeEmail(
-					recipientss[i - 1],
-					newsletter_body_html,
-					newsletter_subject
-				)
-				sendEmail(email.to, email.subject, email.message)
-				if (--i) myLoop(i) //  decrement i and call myLoop again if i > 0
-			}, 500) // delay 500ms
-		})(rec_cnt) */
 
 		let sentlist = []
 		let email = ''
@@ -224,10 +198,6 @@ export default function useEmail() {
 	}
 
 	function sendEmail(to, subject, message) {
-		/* 		console.log(
-			'IN sendEmail ',
-			`to = ${to}  subject = ${subject} message = ${message}`
-		) */
 		const post_data = querystring.stringify({
 			api_key: CONFIG.EE_API_KEY,
 			subject: subject,

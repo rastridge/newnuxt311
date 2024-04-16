@@ -24,10 +24,6 @@
 		</div>
 	</div>
 
-	<!-- updated_choices = {{ updated_choices }}<br /><br />
-		choice_values = {{ choice_values }}<br /><br /> -->
-	<!-- choices = {{ choices }}<br /><br /> -->
-
 	<div class="my-form-style">
 		<FormKit
 			type="form"
@@ -54,29 +50,6 @@
 			#default="{ items, node, value }"
 		>
 			<div v-if="props.id !== 0">
-				<!-- 				
-					<FormKit
-					v-for="(item, index) in items"
-					:key="item"
-					:index="index"
-					:label="
-						choices[index].vote_picked_cnt !== undefined
-							? 'Picked ' + choices[index].vote_picked_cnt + ' times'
-							: ''
-					"
-					suffix-icon="trash"
-					@suffix-icon-click="
-						() => node.input(value.filter((_, i) => i !== index))
-					"
-					:sections-schema="{
-						suffixIcon: {
-							// change wrapper to a button for accessibility
-							$el: 'button',
-						},
-					}"
-					disabled
-				/> -->
-
 				<FormKit
 					v-for="(item, index) in items"
 					:key="item"

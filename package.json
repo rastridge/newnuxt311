@@ -6,12 +6,15 @@
 		"build": "nuxt build",
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
 		"@formkit/nuxt": "^1.6.1",
 		"@formkit/themes": "^1.6.1",
+		"@nuxt/eslint": "^0.3.7",
 		"@nuxt/image": "^1.4.0",
 		"@pinia/nuxt": "^0.5.1",
 		"@unocss/reset": "^0.58.8",
@@ -40,7 +43,9 @@
 	},
 	"devDependencies": {
 		"dayjs-nuxt": "^2.1.9",
+		"eslint": "^9.0.0",
 		"nuxt-primevue": "^0.3.1",
-		"sass": "^1.72.0"
+		"sass": "^1.72.0",
+		"typescript": "^5.4.5"
 	}
 }

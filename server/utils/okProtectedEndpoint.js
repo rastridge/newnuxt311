@@ -9,11 +9,11 @@ export default (event) => {
 		verified = jwt.verify(token, CONFIG.API_SECRET)
 	}
 	if (!verified || !token) {
+		ok = false
 		throw createError({
 			statusCode: 401,
 			message: 'Unauthorized',
 		})
-		ok = false
 	}
 	return ok
 }

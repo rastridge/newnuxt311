@@ -14,7 +14,7 @@ export default function useQuery() {
 			sql = mysql.format(sql, inserts)
 		}
 		// console.log('IN dbQery sql = ', sql)
-		const [rows, fields] = await conn1.execute(sql)
+		const [rows] = await conn1.execute(sql)
 		await conn1.end()
 		return rows
 	}
@@ -27,11 +27,11 @@ export default function useQuery() {
 			database: 'buffalorugby',
 		})
 
-		const r = await conn1.execute("SET time_zone = '+00:00'")
+		await conn1.execute("SET time_zone = '+00:00'")
 		if (inserts) {
 			sql = mysql.format(sql, inserts)
 		}
-		const [rows, fields] = await conn1.execute(sql)
+		const [rows] = await conn1.execute(sql)
 		await conn1.end()
 		return rows
 	}
@@ -49,7 +49,7 @@ export default function useQuery() {
 		if (inserts) {
 			sql = mysql.format(sql, inserts)
 		}
-		const [rows, fields] = await conn1.execute(sql)
+		const [rows] = await conn1.execute(sql)
 		await conn1.end()
 		return rows
 	}
@@ -66,7 +66,7 @@ export default function useQuery() {
 		if (inserts) {
 			sql = mysql.format(sql, inserts)
 		}
-		const [rows, fields] = await conn1.execute(sql)
+		const [rows] = await conn1.execute(sql)
 		await conn1.end()
 		return rows
 	}

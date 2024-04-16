@@ -151,7 +151,7 @@ async function getOne(id) {
 	return votes[0]
 }
 
-async function editOne({ vote_question, choices, id }) {
+async function editOne({ vote_question, id }) {
 	const conn = await getConnectionBuffalorugby()
 	try {
 		await conn.query('START TRANSACTION')
@@ -167,45 +167,6 @@ async function editOne({ vote_question, choices, id }) {
 		inserts.push(vote_question, id)
 		sql = mysql.format(sql, inserts)
 		await conn.execute(sql)
-
-		// delete existing choices
-		/* 		sql = `DELETE FROM inbrc_votes_choices WHERE vote_question_id = ${id}`
-		await conn.execute(sql)
-		console.log('IN editOne sql ', sql) */
-
-		// insert updated choices
-		/* 		await choices.forEach(async (e) => {
-			let sql = `INSERT INTO inbrc_votes_choices
-										( vote_question_id,
-											vote_choice,
-											vote_picked_cnt) 
-										VALUES (?, ?, ?)`
-			let inserts = []
-			inserts.push(id, e.vote_choice, e.vote_picked_cnt)
-			sql = mysql.format(sql, inserts)
-			await conn.execute(sql)
-			console.log('IN editOne sql ', sql)
-		}) */
-
-		/* 		choices.forEach(async (e) => {
-			let sql = `UPDATE inbrc_votes_choices
-									SET vote_choice = ?
-									WHERE vote_choice_id = ?`
-			let inserts = []
-			inserts.push(e.vote_choice, e.vote_choice_id)
-			sql = mysql.format(sql, inserts)
-			conn.execute(sql)
-			console.log('IN editOne sql ', sql)
-		}) */
-
-		/* 		sql = `UPDATE inbrc_votes_choices
-									SET vote_choice = ?
-									WHERE vote_choice_id = ?`
-		inserts = []
-		inserts.push(choices[0].vote_choice, choices[0].vote_choice_id)
-		sql = mysql.format(sql, inserts)
-		console.log('IN editOne sql2 ', sql)
-		conn.execute(sql) */
 
 		await conn.query('COMMIT')
 		await conn.end()

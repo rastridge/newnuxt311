@@ -88,7 +88,7 @@ async function getHistoryStreaks(id) {
 }
 
 async function getHistoryCurrentStreak(id) {
-	const sql1 = `SELECT
+	/* 	const sql1 = `SELECT
 									date,
 									date_ut,
 									result,
@@ -110,8 +110,8 @@ async function getHistoryCurrentStreak(id) {
 									AND GR.Status = 1
 								ORDER BY
 									date_ut ASC`
-
-	const sql2 = `SELECT result,
+ */
+	/* 	const sql2 = `SELECT result,
 								MIN(date_ut) as StartDate,
 								MAX(date_ut) as EndDate,
 								COUNT(*) as Games
@@ -139,6 +139,7 @@ async function getHistoryCurrentStreak(id) {
 								GROUP BY result, RunGroup
 								ORDER BY Min(date_ut)`
 
+								 */
 	const sql = `SELECT TOP 1 *
 								FROM (SELECT result,
 								MIN(date_ut) as StartDate,
@@ -173,7 +174,7 @@ async function getHistoryCurrentStreak(id) {
 									AND
 									opponent_id = ${id}`
 
-	stats = await doDBQueryBuffalorugby(sql)
+	const stats = await doDBQueryBuffalorugby(sql)
 	return stats
 }
 
@@ -569,10 +570,10 @@ async function getPlayers(id) {
 								player_id,
 								a1.member_firstname pfn,
 								a1.member_lastname pln,
-								CONCAT(a1.member_lastname,"\, ",a1.member_firstname) as pname,
+								CONCAT(a1.member_lastname,", ",a1.member_firstname) as pname,
 								a2.member_firstname rfn,
 								a2.member_lastname rln,
-								CONCAT(a2.member_lastname,"\, ",a2.member_firstname) as rname,
+								CONCAT(a2.member_lastname,", ",a2.member_firstname) as rname,
 								tries,
 								assists,
 								conv,
@@ -844,7 +845,7 @@ async function addOne({
 			ptsAgn
 		)
 		sql = mysql.format(sql, inserts)
-		const [rows, fields] = await conn.execute(sql)
+		const [rows] = await conn.execute(sql)
 		const game_id = rows.insertId
 
 		// add records for 23 players
@@ -889,7 +890,7 @@ async function addOne({
 	} catch (e) {
 		await conn.query('ROLLBACK')
 		await conn.end()
-		return 'rollback'
+		return 'rollback' + e
 	}
 }
 
@@ -987,7 +988,7 @@ async function editOne({
 	} catch (e) {
 		await conn.query('ROLLBACK')
 		await conn.end()
-		return 'ROLLBACK'
+		return 'ROLLBACK' + e
 	}
 }
 
@@ -1009,7 +1010,7 @@ async function deleteOne(id) {
 	} catch (e) {
 		await conn.query('ROLLBACK')
 		await conn.end()
-		return 'ROLLBACK'
+		return 'ROLLBACK' + e
 	}
 }
 

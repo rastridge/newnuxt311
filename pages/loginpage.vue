@@ -11,7 +11,7 @@
 						type="text"
 						name="username"
 						label="Username"
-						validation="required|length:3"
+						validation="length:3"
 						validation-visibility="live"
 						:validation-messages="{
 							matches: 'Username must be at least 3 chars',
@@ -23,7 +23,7 @@
 						type="password"
 						name="password"
 						label="Password"
-						validation="required|length:5"
+						validation="length:5"
 						validation-visibility="live"
 						:validation-messages="{
 							matches: 'Password must be at least 5 chars',

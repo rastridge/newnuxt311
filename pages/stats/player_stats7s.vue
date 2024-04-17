@@ -8,9 +8,9 @@
 		<div class="my-simple-card-style">
 			<div class="my-datatable-wrapper-style">
 				<DataTable
-					:value="data"
-					dataKey="name"
+					:value="table_data"
 					v-model:filters="filters"
+					dataKey="name"
 					:globalFilterFields="['member_type']"
 					class="p-datatable-sm my-text-style"
 					row-hover
@@ -35,9 +35,9 @@
 								v-model="filterModel.value"
 								type="text"
 								style="width: 8rem"
-								@input="filterCallback()"
 								class="p-column-filter"
 								placeholder="Search by name"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -46,10 +46,10 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								style="width: 6rem"
 								class="p-column-filter"
 								placeholder="Search by year"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -62,10 +62,10 @@
 						<template #filter="{ filterModel, filterCallback }">
 							<Dropdown
 								v-model="filterModel.value"
-								@change="filterCallback()"
 								:options="member_types"
 								placeholder="Search by member type"
 								:showClear="true"
+								@change="filterCallback()"
 							>
 							</Dropdown>
 						</template>
@@ -126,10 +126,13 @@
 	//
 	// Get current news
 	//
-	const { data } = await useFetch('/game_player_stats/getplayerstats/7', {
-		// 1 = sevens
-		method: 'get',
-	})
+	const { data: table_data } = await useFetch(
+		'/game_player_stats/getplayerstats/7',
+		{
+			// 1 = sevens
+			method: 'get',
+		}
+	)
 
 	//
 	// filter value criteria

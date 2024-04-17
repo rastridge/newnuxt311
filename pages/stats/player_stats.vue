@@ -8,8 +8,8 @@
 			<div class="my-datatable-wrapper-style">
 				<DataTable
 					:value="data"
-					dataKey="name"
 					v-model:filters="filters"
+					dataKey="name"
 					:globalFilterFields="['member_type']"
 					class="p-datatable-sm my-text-style"
 					row-hover
@@ -33,10 +33,10 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								style="width: 8rem"
 								class="p-column-filter"
 								placeholder="Search by name"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -45,10 +45,10 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								style="width: 6rem"
 								class="p-column-filter"
 								placeholder="Search by year"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -61,10 +61,10 @@
 						<template #filter="{ filterModel, filterCallback }">
 							<Dropdown
 								v-model="filterModel.value"
-								@change="filterCallback()"
 								:options="member_types"
 								placeholder="Search by member type"
 								:showClear="true"
+								@change="filterCallback()"
 							>
 							</Dropdown>
 						</template>
@@ -125,13 +125,10 @@
 	//
 	// Get current news
 	//
-	const { data, pending, error, refresh } = await useFetch(
-		'/game_player_stats/getplayerstats/1',
-		{
-			// 1 = fifteens
-			method: 'get',
-		}
-	)
+	const { data } = await useFetch('/game_player_stats/getplayerstats/1', {
+		// 1 = fifteens
+		method: 'get',
+	})
 
 	//
 	// filter value criteria

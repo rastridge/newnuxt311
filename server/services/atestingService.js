@@ -1,4 +1,3 @@
-const CONFIG = useRuntimeConfig()
 const { doDBQueryTZ0 } = useQuery()
 
 export const atestingService = {

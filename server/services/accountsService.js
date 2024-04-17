@@ -120,7 +120,6 @@ async function addOne(info) {
 		await CONN.query('START TRANSACTION')
 
 		// check for existing email
-		let account = []
 		let msg = null // will be returned with message if email exists
 		let sql = `SELECT * FROM inbrc_accounts WHERE deleted = 0`
 		const [rows] = await CONN.execute(sql)

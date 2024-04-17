@@ -18,7 +18,7 @@
 		alert.clear()
 		await onSubmitEdit('sponsors', state)
 		if (alert.message === null) {
-			navigateTo(`/admin/accounts/men`)
+			navigateTo(`/admin/sponsors`)
 		}
 	}
 </script>

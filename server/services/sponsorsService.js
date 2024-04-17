@@ -132,7 +132,7 @@ async function addOne({
 			ad_client_website,
 			ad_image_path
 		)
-		const sponsor = await doDBQueryBuffalorugby(sql, inserts)
+		await doDBQueryBuffalorugby(sql, inserts)
 
 		/* const email = {
 			from: FROM,
@@ -187,7 +187,7 @@ async function editOne({
 			ad_image_path,
 			id
 		)
-		const sponsor = await doDBQueryBuffalorugby(sql, inserts)
+		await doDBQueryBuffalorugby(sql, inserts)
 
 		/* const email = {
 			from: FROM,

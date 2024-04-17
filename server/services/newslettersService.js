@@ -252,7 +252,7 @@ async function sendNewsletter({
 								WHERE
 									newsletter_id = ${newsletter_id}`
 
-	const newsletters = await doDBQueryBuffalorugby(sql2)
+	await doDBQueryBuffalorugby(sql2)
 	return r
 }
 //
@@ -265,10 +265,10 @@ async function getOne(id) {
 }
 
 async function trackNewsletter(query) {
-	console.log('IN newsletterService query = ', query)
+	// console.log('IN newsletterService query = ', query)
+	const conn = await getConnectionBuffalorugby()
 
 	try {
-		const conn = await getConnectionBuffalorugby()
 		await conn.query('START TRANSACTION')
 
 		// update member last email opened date
@@ -294,7 +294,7 @@ async function trackNewsletter(query) {
 		inserts = []
 		inserts.push(query.newsletter_id, query.account_id)
 		sql = mysql.format(sql, inserts)
-		let [rows, fields] = await conn.execute(sql)
+		let [rows] = await conn.execute(sql)
 		let cnt = rows[0].cnt
 
 		// IF not already counted as opened
@@ -323,13 +323,12 @@ async function trackNewsletter(query) {
 
 		await conn.query('COMMIT')
 		await conn.end()
+		return 'COMMIT'
 	} catch (e) {
 		await conn.query('ROLLBACK')
 		await conn.end()
-		return 'Error in sql'
+		return 'ROLLBACK ' + e
 	}
-
-	return query
 }
 
 async function addOne({
@@ -339,7 +338,7 @@ async function addOne({
 	newsletter_body_text,
 	newsletter_body_html,
 }) {
-	var sql = `INSERT INTO inbrc_newsletters SET
+	let sql = `INSERT INTO inbrc_newsletters SET
 								newsletter_recipient_type_id = ?,
                 admin_user_id = ?,
                 newsletter_subject = ?,
@@ -350,7 +349,7 @@ async function addOne({
                 created_dt = NOW(),
                 modified_dt= NOW()`
 
-	var inserts = []
+	let inserts = []
 	inserts.push(
 		newsletter_recipient_type_id,
 		admin_user_id,
@@ -373,7 +372,7 @@ async function editOne({
 	newsletter_send_complete,
 	newsletter_send_status,
 }) {
-	var sql = `UPDATE inbrc_newsletters SET
+	let sql = `UPDATE inbrc_newsletters SET
 							newsletter_recipient_type_id = ?,
 							admin_user_id = ?,
 							newsletter_subject = ?,
@@ -384,7 +383,7 @@ async function editOne({
 							newsletter_send_status = ?,
 							modified_dt= NOW()
 						WHERE newsletter_id = ?`
-	var inserts = []
+	let inserts = []
 	inserts.push(
 		newsletter_recipient_type_id,
 		admin_user_id,

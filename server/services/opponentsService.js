@@ -1,5 +1,4 @@
 import mysql from 'mysql2/promise'
-const CONFIG = useRuntimeConfig()
 const { doDBQueryBuffalorugby } = useQuery()
 const { getConnectionBuffalorugby } = useDBConnection()
 

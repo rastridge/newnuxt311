@@ -1,4 +1,3 @@
-const CONFIG = useRuntimeConfig()
 const { doDBQueryDatestring } = useQuery()
 
 export const newsService = {

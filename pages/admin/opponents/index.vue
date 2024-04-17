@@ -32,17 +32,18 @@
 			<span class="p-text-secondary block mb-5">{{ message }}</span>
 
 			<template #footer>
-				<Button label="Continue" outlined @click="visible = false" autofocus />
+				<Button label="Continue" outlined autofocus @click="visible = false" />
 			</template>
 		</Dialog>
 	</div>
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
+
 	const placemark = usePlacemarkStore()
 
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()

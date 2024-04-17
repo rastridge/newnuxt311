@@ -2,10 +2,7 @@
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { useAlertStore } from '~/stores/alertStore'
-	const alert = useAlertStore()
 	const { onSubmitEdit } = useSubmit()
-	const saving = ref(false)
 
 	//
 	// Get news item id

@@ -1,9 +1,10 @@
 <script setup>
+	import Swal from 'sweetalert2'
+	import { useAlertStore } from '~/stores/alertStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import Swal from 'sweetalert2'
-	import { useAlertStore } from '~/stores/alertStore'
+
 	const alert = useAlertStore()
 	const { addNewsletter } = useNewsletter()
 

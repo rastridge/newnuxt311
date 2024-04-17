@@ -1,4 +1,3 @@
-import { contributionsService } from '~/server/services/contributionsService'
 import { smsService } from '~/server/services/smsService'
 
 export default defineEventHandler(async (event) => {

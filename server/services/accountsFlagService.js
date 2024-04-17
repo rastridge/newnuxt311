@@ -129,7 +129,6 @@ async function addOne({
 	sms_recipient,
 }) {
 	// check for existing email
-	let account = []
 	let msg = null // will be returned with message if email exists
 	let sql = `SELECT * FROM inbrc_accounts_flag WHERE deleted = 0`
 	const temp = await doDBQueryBuffalorugby(sql)
@@ -203,8 +202,7 @@ async function addOne({
 			mail_recipient,
 			sms_recipient
 		)
-		const account = await doDBQueryBuffalorugby(sql, inserts)
-		// account.error = ''
+		await doDBQueryBuffalorugby(sql, inserts)
 
 		const message =
 			'<h3>An Buffalo Rugby Club youth flag rugby account for ' +

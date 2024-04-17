@@ -408,7 +408,7 @@ async function deleteOne(id) {
 			inserts = []
 			inserts.push(id)
 			sql = mysql.format(sql, inserts)
-			const games = await conn.execute(sql)
+			await conn.execute(sql)
 
 			sql = `UPDATE inbrc_newsletter_openings
 							SET

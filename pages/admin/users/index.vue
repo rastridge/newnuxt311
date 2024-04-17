@@ -25,15 +25,13 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
 	const app = 'users'
-	import { useAlertStore } from '~/stores/alertStore'
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	const placemark = usePlacemarkStore()
 
-	const alert = useAlertStore()
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()
 
 	//
@@ -47,7 +45,7 @@
 	//
 	// Get all users
 	//
-	const { data: users, pending } = await getAll('users')
+	const { data: users } = await getAll('users')
 
 	//
 	// Renderlist actions

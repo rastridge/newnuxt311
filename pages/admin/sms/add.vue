@@ -1,10 +1,8 @@
 <script setup>
+	import Swal from 'sweetalert2'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import Swal from 'sweetalert2'
-	import { useAlertStore } from '~/stores/alertStore'
-	const alert = useAlertStore()
 	const { addSMS } = useSMS()
 
 	//

@@ -27,10 +27,11 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
+
 	const placemark = usePlacemarkStore()
 
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()

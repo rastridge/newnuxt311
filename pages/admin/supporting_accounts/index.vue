@@ -18,9 +18,9 @@
 			<div class="my-datatable-wrapper-style">
 				<DataTable
 					v-model:expandedRows="expandedRows"
+					v-model:filters="filters"
 					:value="supportingaccounts"
 					dataKey="supportingApp_id"
-					v-model:filters="filters"
 					:globalFilterFields="['supportingApp_name']"
 					class="p-datatable-sm my-text-style"
 					striped-rows
@@ -127,11 +127,12 @@
 </template>
 
 <script setup>
+	import { FilterMatchMode } from 'primevue/api'
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { FilterMatchMode } from 'primevue/api'
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
+
 	const placemark = usePlacemarkStore()
 
 	//

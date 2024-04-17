@@ -16,10 +16,10 @@
 </template>
 
 <script setup>
+	import { useAlertStore } from '~/stores/alertStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { useAlertStore } from '~/stores/alertStore'
 	const alert = useAlertStore()
 	const { onSubmitAdd } = useSubmit()
 

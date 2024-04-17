@@ -30,7 +30,7 @@
 					v-model:filters="filters"
 					:globalFilterFields="['opponent_name']"
 					class="p-datatable-sm my-text-style"
-					stripedRows
+					striped-rows
 					filterDisplay="row"
 					paginator
 					:rows="20"

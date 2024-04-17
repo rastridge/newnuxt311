@@ -23,7 +23,7 @@
 					v-model:filters="filters"
 					:globalFilterFields="['supportingApp_name']"
 					class="p-datatable-sm my-text-style"
-					stripedRows
+					striped-rows
 					filterDisplay="row"
 					paginator
 					:rows="20"

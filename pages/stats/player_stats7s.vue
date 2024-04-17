@@ -13,8 +13,8 @@
 					v-model:filters="filters"
 					:globalFilterFields="['member_type']"
 					class="p-datatable-sm my-text-style"
-					rowHover
-					stripedRows
+					row-hover
+					striped-rows
 					filterDisplay="row"
 					paginator
 					:rows="20"

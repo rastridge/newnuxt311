@@ -11,7 +11,7 @@
 				<DataTable
 					:value="leaders"
 					class="p-datatable-sm my-text-style"
-					stripedRows
+					striped-rows
 					tableStyle="min-width: 50rem"
 					paginator
 					:rows="20"

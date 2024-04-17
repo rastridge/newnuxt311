@@ -13,7 +13,7 @@
 					v-model:filters="filters"
 					:globalFilterFields="['member_type']"
 					:class="'p-datatable-sm my-text-style'"
-					stripedRows
+					striped-rows
 					filterDisplay="row"
 					paginator
 					:rows="10"

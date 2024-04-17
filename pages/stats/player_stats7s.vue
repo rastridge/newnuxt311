@@ -126,13 +126,10 @@
 	//
 	// Get current news
 	//
-	const { data, pending, error, refresh } = await useFetch(
-		'/game_player_stats/getplayerstats/7',
-		{
-			// 1 = sevens
-			method: 'get',
-		}
-	)
+	const { data } = await useFetch('/game_player_stats/getplayerstats/7', {
+		// 1 = sevens
+		method: 'get',
+	})
 
 	//
 	// filter value criteria

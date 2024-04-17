@@ -257,7 +257,6 @@ async function editOne(info) {
 	try {
 		await CONN.query('START TRANSACTION')
 
-		let account = []
 		// check for other users with proposed email address
 		let msg = null // will be returned with message if email exists
 		let sql = `SELECT * FROM inbrc_accounts WHERE deleted = 0 AND account_id <> ${info.account_id}`
@@ -365,24 +364,7 @@ async function editOne(info) {
 			sql = mysql.format(sql, inserts)
 			await CONN.execute(sql)
 
-			const [rows] = await CONN.execute(sql)
-			account = rows
-
-			//
-			// Compose and send individual email
-			//
-
-			/* sendEmail(
-				CONFIG.TO,
-				'Buffalo Rugby Club Member Account Update',
-				'The account for ' +
-					member_firstname +
-					' ' +
-					member_lastname +
-					'  has been updated ' +
-					' email = ' +
-					lc_account_email
-			) */
+			await CONN.execute(sql)
 		} else {
 			msg = 'Account with email ' + info.account_email + ' already exists'
 		}
@@ -394,6 +376,7 @@ async function editOne(info) {
 	} catch (e) {
 		await CONN.query('ROLLBACK')
 		await CONN.end()
+		return 'ROLLBACK ' + e
 	}
 }
 

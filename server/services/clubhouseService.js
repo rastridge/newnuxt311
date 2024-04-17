@@ -1,4 +1,3 @@
-const CONFIG = useRuntimeConfig()
 const { doDBQueryBuffalorugby } = useQuery()
 
 export const clubhouseService = {

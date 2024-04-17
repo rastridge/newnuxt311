@@ -219,7 +219,7 @@ async function addOne({
 		sql =
 			`SELECT member_firstname, member_lastname, account_email FROM inbrc_accounts WHERE account_id = ` +
 			account_id
-		const [rows, fields] = await CONN.execute(sql)
+		const [rows] = await CONN.execute(sql)
 
 		const msg =
 			rows[0].member_firstname +

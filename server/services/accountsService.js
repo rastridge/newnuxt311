@@ -123,7 +123,7 @@ async function addOne(info) {
 		let account = []
 		let msg = null // will be returned with message if email exists
 		let sql = `SELECT * FROM inbrc_accounts WHERE deleted = 0`
-		const [rows, fields] = await CONN.execute(sql)
+		const [rows] = await CONN.execute(sql)
 		const temp = rows
 		const lc_account_email = info.account_email.toLowerCase()
 		const emailExists = temp.find(
@@ -261,7 +261,7 @@ async function editOne(info) {
 		// check for other users with proposed email address
 		let msg = null // will be returned with message if email exists
 		let sql = `SELECT * FROM inbrc_accounts WHERE deleted = 0 AND account_id <> ${info.account_id}`
-		const [rows, fields] = await CONN.execute(sql)
+		const [rows] = await CONN.execute(sql)
 		const temp = rows
 		const lc_account_email = info.account_email.toLowerCase()
 		const emailExists = temp.find(
@@ -365,7 +365,7 @@ async function editOne(info) {
 			sql = mysql.format(sql, inserts)
 			await CONN.execute(sql)
 
-			const [rows, fields] = await CONN.execute(sql)
+			const [rows] = await CONN.execute(sql)
 			account = rows
 
 			//

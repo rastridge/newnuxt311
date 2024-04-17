@@ -54,18 +54,17 @@
 					<DataTable
 						:value="record"
 						class="p-datatable-sm my-text-style"
-						rowHover
+						row-hover
 					>
-						<Column field="season" header="Season">
-							<template #body="slotProps">
-								{{ slotProps.data.season }}
-							</template>
-						</Column>
-						<Column field="game_count" header="Games"></Column>
-						<Column field="wins" header="Wins"></Column>
-						<Column field="losses" header="Losses"></Column>
-						<Column field="ties" header="Ties"></Column>
-						<Column field="unknown" header="Unknown"></Column>
+						<Column field="season" header="Season" />
+						<template #body="slotProps">
+							{{ slotProps.data.season }}
+						</template>
+						<Column field="game_count" header="Games" />
+						<Column field="wins" header="Wins" />
+						<Column field="losses" header="Losses" />
+						<Column field="ties" header="Ties" />
+						<Column field="unknown" header="Unknown" />
 						<Column header="Win%">
 							<template #body="slotProps">
 								{{
@@ -95,7 +94,7 @@
 
 	const getRecord = async (gt) => {
 		const url = `/game_player_stats/getteamstats/${gt}`
-		const { data, pending, error } = await useFetch(url, {
+		const { data } = await useFetch(url, {
 			method: 'get',
 		})
 		return data.value
@@ -103,7 +102,7 @@
 
 	const getTotals = async (gt) => {
 		const url = `/game_player_stats/getteamstatstotal/${gt}`
-		const { data, error: error2 } = await useFetch(url, {
+		const { data } = await useFetch(url, {
 			method: 'get',
 		})
 		return data.value

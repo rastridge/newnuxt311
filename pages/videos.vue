@@ -11,8 +11,8 @@
 				<select-year
 					:startyear="startyear"
 					:currentyear="year"
-					@submitted="onSubmit"
 					class="mb-3"
+					@submitted="onSubmit"
 				/>
 			</div>
 		</div>
@@ -89,16 +89,16 @@
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen
-				></iframe>
+				/>
 				<!-- </div> -->
 			</div>
 			<template #footer>
 				<div>
 					<Button
-						label="Return"
-						@click="closeModal"
 						class="p-button-sm"
 						autofocus
+						label="Return"
+						@click="closeModal"
 					/>
 				</div>
 			</template>
@@ -128,19 +128,14 @@
 	//
 	// Get current videos
 	//
-	const {
-		data: videos,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/videos/getallcurrent', {
+	const { data: videos } = await useFetch('/videos/getallcurrent', {
 		method: 'get',
 	})
 
 	const selectItem = (item) => getOne(item.id)
 
 	const getOne = async (id) => {
-		const { data, pending, error, refresh } = await useFetch('/videos/' + id, {
+		const { data } = await useFetch('/videos/' + id, {
 			method: 'get',
 		})
 

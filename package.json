@@ -36,7 +36,7 @@
 		"sweetalert2": "^11.10.7",
 		"twilio": "^4.11.0",
 		"unocss": "^0.58.8",
-		"vite": "*",
+		"vite": "^5.2.9",
 		"vue": "^3.4.21",
 		"vue-router": "^4.3.0",
 		"vue-youtube-embed": "^2.2.2"

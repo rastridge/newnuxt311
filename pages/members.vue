@@ -8,9 +8,9 @@
 			<div class="my-datatable-wrapper-style">
 				<DataTable
 					v-model:expandedRows="expandedRows"
+					v-model:filters="filters"
 					:value="members"
 					dataKey="account_id"
-					v-model:filters="filters"
 					:globalFilterFields="['member_type']"
 					:class="'p-datatable-sm my-text-style'"
 					striped-rows
@@ -130,12 +130,7 @@
 	//
 	// Get current news
 	//
-	const {
-		data: members,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/accounts/getshow', {
+	const { data: members } = await useFetch('/accounts/getshow', {
 		method: 'get',
 	})
 

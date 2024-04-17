@@ -32,12 +32,7 @@
 	//
 	// Get current news
 	//
-	const {
-		data: officers,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/accounts/getofficers', {
+	const { data: officers } = await useFetch('/accounts/getofficers', {
 		method: 'get',
 	})
 </script>

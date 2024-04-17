@@ -8,9 +8,9 @@
 			<div class="my-datatable-wrapper-style">
 				<DataTable
 					v-model:expandedRows="expandedRows"
+					v-model:filters="filters"
 					:value="opponents"
 					dataKey="opponent_id"
-					v-model:filters="filters"
 					:globalFilterFields="['opponent_type']"
 					class="p-datatable-sm my-text-style"
 					striped-rows
@@ -40,9 +40,9 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								placeholder="Search by name"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -57,9 +57,9 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								placeholder="Search by location"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -71,10 +71,10 @@
 						<template #filter="{ filterModel, filterCallback }">
 							<Dropdown
 								v-model="filterModel.value"
-								@change="filterCallback()"
 								:options="opponent_types"
 								:showClear="true"
 								style="width: 10rem"
+								@change="filterCallback()"
 							>
 							</Dropdown>
 						</template>
@@ -99,12 +99,7 @@
 	//
 	// Get opponents
 	//
-	const {
-		data: opponents,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/opponents/getallcurrent', {
+	const { data: opponents } = await useFetch('/opponents/getallcurrent', {
 		method: 'get',
 	})
 

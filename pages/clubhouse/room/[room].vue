@@ -50,12 +50,9 @@
 
 	const otherdata = ref(null)
 
-	const { data, pending, error, refresh } = await useFetch(
-		`/clubhouse/room/${room.value}`,
-		{
-			method: 'get',
-		}
-	)
+	const { data } = await useFetch(`/clubhouse/room/${room.value}`, {
+		method: 'get',
+	})
 	otherdata.value = data.value
 
 	// Find server code in folder Nuxt3-brc-media-api

@@ -23,12 +23,7 @@
 	//
 	// Get custom page content
 	//
-	const {
-		data: news_data,
-		pending,
-		error,
-		refresh,
-	} = await useFetch(`/news/${news_id.value}`, {
+	const { data: news_data } = await useFetch(`/news/${news_id.value}`, {
 		method: 'get',
 	})
 </script>

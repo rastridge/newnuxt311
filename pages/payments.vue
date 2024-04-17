@@ -29,17 +29,10 @@
 </template>
 
 <script setup>
-	const { $dayjs } = useNuxtApp()
-
 	//
 	// Get current news
 	//
-	const {
-		data: payments,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/payments/getallcurrent', {
+	const { data: payments } = await useFetch('/payments/getallcurrent', {
 		method: 'get',
 	})
 </script>

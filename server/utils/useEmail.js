@@ -138,49 +138,6 @@ export default function useEmail() {
 			return email
 		}
 
-		// local function
-		function sendEmailHelper(to, subject, message) {
-			const post_data = querystring.stringify({
-				api_key: CONFIG.EE_API_KEY,
-				subject: subject,
-				from: CONFIG.FROM,
-				fromName: CONFIG.FROM_NAME,
-				to: to,
-				body_html: message,
-				body_text: '',
-				isTransactional: true,
-			})
-
-			const post_options = {
-				hostname: 'api.elasticemail.com',
-				path: '/v2/email/send',
-				port: '443',
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
-					'Content-Length': post_data.length,
-				},
-			}
-
-			let result = ''
-			const post_req = https.request(post_options, function (res) {
-				res.setEncoding('utf8')
-				res.on('data', function (chunk) {
-					// result = chunk
-					const { statusCode, statusMessage, headers } = res
-					result = statusCode
-				})
-				res.on('error', function (e) {
-					result = 'Error: ' + e.message
-				})
-			})
-
-			post_req.write(post_data)
-			post_req.end()
-
-			return result
-		}
-
 		const rec_cnt = recipientss.length
 
 		let sentlist = []
@@ -193,7 +150,8 @@ export default function useEmail() {
 				newsletter_body_html,
 				newsletter_subject
 			)
-			await sendEmailHelper(email.to, email.subject, email.message)
+			// await sendEmailHelper(email.to, email.subject, email.message)
+			await sendEmail(email.to, email.subject, email.message)
 			sentlist.push(email.to)
 			i++
 		} while (i < recipientss.length)
@@ -230,6 +188,7 @@ export default function useEmail() {
 			res.on('data', function (chunk) {
 				// result = chunk
 				const { statusCode, statusMessage, headers } = res
+				// console.log('statusCode, statusMessage ', statusCode, statusMessage)
 				result = statusCode
 			})
 			res.on('error', function (e) {

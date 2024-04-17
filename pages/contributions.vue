@@ -60,8 +60,8 @@
 				<select-year
 					:startyear="startyear"
 					:currentyear="year"
-					@submitted="onSubmit"
 					class="mb-3"
+					@submitted="onSubmit"
 				/>
 			</div>
 		</div>
@@ -209,12 +209,9 @@
 	// Get year contributions
 	//
 	const getYearContributiions = async (year) => {
-		const { data, pending, error, refresh } = await useFetch(
-			`/contributions/year/${year}`,
-			{
-				method: 'get',
-			}
-		)
+		const { data } = await useFetch(`/contributions/year/${year}`, {
+			method: 'get',
+		})
 		let sum = 0
 		for (let i = 0; i < data.value.length; i++) {
 			sum += data.value[i].contribution_amount
@@ -224,12 +221,9 @@
 		contributions.value = data.value
 	}
 	const getTopContributors = async () => {
-		const { data, pending, error, refresh } = await useFetch(
-			`/contributions/top`,
-			{
-				method: 'get',
-			}
-		)
+		const { data } = await useFetch(`/contributions/top`, {
+			method: 'get',
+		})
 		topcontributors.value = data.value
 	}
 

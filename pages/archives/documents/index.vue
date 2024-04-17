@@ -11,8 +11,8 @@
 				<select-year
 					:startyear="startyear"
 					:currentyear="year"
-					@submitted="onSubmit"
 					class="mb-3"
+					@submitted="onSubmit"
 				/>
 			</div>
 		</div>
@@ -68,12 +68,7 @@
 	//
 	// Get current archives
 	//
-	const {
-		data: archives,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/archive/getallcurrent', {
+	const { data: archives } = await useFetch('/archive/getallcurrent', {
 		method: 'get',
 	})
 </script>

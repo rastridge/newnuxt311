@@ -23,15 +23,13 @@
 	//
 	// Get custom page content
 	//
-	const {
-		data: content_data,
-		pending,
-		error,
-		refresh,
-	} = await useFetch(`/content/${content_id.value}`, {
-		initialCache: false,
-		method: 'get',
-	})
+	const { data: content_data } = await useFetch(
+		`/content/${content_id.value}`,
+		{
+			initialCache: false,
+			method: 'get',
+		}
+	)
 	//
 	// make any images expand to width of container
 	// should i do this when saving to db instead ?

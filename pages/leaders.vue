@@ -38,12 +38,7 @@
 	//
 	// Get current news
 	//
-	const {
-		data: leaders,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/leaders/getallcurrent', {
+	const { data: leaders } = await useFetch('/leaders/getallcurrent', {
 		method: 'get',
 	})
 </script>

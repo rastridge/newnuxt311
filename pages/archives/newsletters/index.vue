@@ -85,9 +85,9 @@
 				<div>
 					<Button
 						label="Return"
-						@click="closeModal"
 						class="p-button-sm"
 						autofocus
+						@click="closeModal"
 					/>
 				</div>
 			</template>

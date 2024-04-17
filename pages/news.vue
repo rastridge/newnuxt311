@@ -32,7 +32,7 @@
 							frameborder="0"
 							allowTransparency="true"
 							allow="encrypted-media"
-						></iframe>
+						/>
 					</div>
 				</div>
 				<div class="flex justify-content-center">
@@ -232,26 +232,26 @@
 											justify-content: center;
 											margin-bottom: 24px;
 										"
-									>
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 4px;
-												flex-grow: 0;
-												height: 14px;
-												margin-bottom: 6px;
-												width: 224px;
-											"
-										></div>
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 4px;
-												flex-grow: 0;
-												height: 14px;
-												width: 144px;
-											"
-										></div></div
+									></div>
+									<div
+										style="
+											background-color: #f4f4f4;
+											border-radius: 4px;
+											flex-grow: 0;
+											height: 14px;
+											margin-bottom: 6px;
+											width: 224px;
+										"
+									></div>
+									<div
+										style="
+											background-color: #f4f4f4;
+											border-radius: 4px;
+											flex-grow: 0;
+											height: 14px;
+											width: 144px;
+										"
+									></div
 								></a>
 								<p
 									style="
@@ -373,9 +373,9 @@
 				<div>
 					<Button
 						label="Return"
-						@click="closeModal"
 						class="p-button-sm"
 						autofocus
+						@click="closeModal"
 					/>
 				</div>
 			</template>
@@ -404,12 +404,7 @@
 	//
 	// Get current news
 	//
-	const {
-		data: news,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/news/getallcurrent', {
+	const { data: news } = await useFetch('/news/getallcurrent', {
 		method: 'get',
 	})
 </script>

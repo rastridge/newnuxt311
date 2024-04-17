@@ -23,15 +23,9 @@
 </template>
 
 <script setup>
-	// initialize formkit state
-	const username = ref('')
-
-	// form actions
-	//
-
 	const handleSubmit = async function (state) {
 		const username = state.username
-		const { data, error } = await useFetch('/users/resetrequest', {
+		await useFetch('/users/resetrequest', {
 			method: 'POST',
 			body: { username },
 		})

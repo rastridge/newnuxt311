@@ -16,8 +16,7 @@
 						:validation-messages="{
 							matches: 'Username must be at least 3 chars',
 						}"
-					>
-					</FormKit>
+					/>
 
 					<FormKit
 						type="password"
@@ -28,17 +27,12 @@
 						:validation-messages="{
 							matches: 'Password must be at least 5 chars',
 						}"
-					>
-					</FormKit>
+					/>
 
 					<div class="flex align-items-center justify-content-between mb-6">
 						<div class="flex align-items-center">
 							<span class="text-sm">Keep me logged in&nbsp;</span>
-							<Checkbox
-								:binary="true"
-								v-model="keeploggedin"
-								class="mr-2"
-							></Checkbox>
+							<Checkbox v-model="keeploggedin" :binary="true" class="mr-2" />
 						</div>
 
 						<nuxt-link

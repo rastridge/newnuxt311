@@ -44,7 +44,7 @@
 <script setup>
 	const handleSubmit = (state) => {
 		const email = state.email
-		const { data, error } = useFetch('/votes/sendballot', {
+		useFetch('/votes/sendballot', {
 			method: 'POST',
 			body: { email },
 		})

@@ -7,8 +7,8 @@
 		<div class="my-simple-card-style">
 			<div class="my-datatable-wrapper-style">
 				<DataTable
-					:value="data"
 					v-model:filters="filters"
+					:value="data"
 					dataKey="name"
 					:globalFilterFields="['member_type']"
 					class="p-datatable-sm my-text-style"

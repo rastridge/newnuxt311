@@ -12,8 +12,8 @@
 				<select-year
 					:startyear="startyear"
 					:currentyear="year"
-					@submitted="onSubmit"
 					class="mb-3"
+					@submitted="onSubmit"
 				/>
 			</div>
 		</div>
@@ -84,9 +84,9 @@
 				<div>
 					<Button
 						label="Return"
-						@click="closeModal"
 						class="p-button-sm"
 						autofocus
+						@click="closeModal"
 					/>
 				</div>
 			</template>

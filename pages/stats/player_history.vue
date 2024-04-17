@@ -25,8 +25,8 @@
 		<div class="my-simple-card-style">
 			<div class="my-datatable-wrapper-style">
 				<DataTable
-					:value="history"
 					v-model:filters="filters"
+					:value="history"
 					dataKey="account_id"
 					:globalFilterFields="['opponent_name']"
 					class="p-datatable-sm my-text-style"

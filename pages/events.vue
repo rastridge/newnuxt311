@@ -35,12 +35,7 @@
 	//
 	// Get current news
 	//
-	const {
-		data: events,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/events/getallcurrent', {
+	const { data: events } = await useFetch('/events/getallcurrent', {
 		method: 'get',
 	})
 </script>

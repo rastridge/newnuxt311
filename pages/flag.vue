@@ -19,7 +19,7 @@
 						frameborder="0"
 						allowTransparency="true"
 						allow="encrypted-media"
-					></iframe>
+					/>
 				</div>
 			</div>
 		</div>

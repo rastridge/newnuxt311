@@ -9,8 +9,7 @@
 				class="p-button-sm m-2"
 				label="Return to Main Room"
 				@click="navigateTo(`/clubhouse`)"
-			>
-			</Button>
+			/>
 		</div>
 		<div
 			class="flex flex-row flex-wrap align-items-center justify-content-center gap-3 p-4"
@@ -37,11 +36,10 @@
 	useHead({
 		title: 'Buffalo Rugby Clubhouse',
 	})
-	const CONFIG = useRuntimeConfig()
 
 	const wofdata = ref(null)
 
-	const { data, pending, error, refresh } = await useFetch(`/accounts/getwof`, {
+	const { data } = await useFetch(`/accounts/getwof`, {
 		method: 'get',
 	})
 	wofdata.value = data.value

@@ -26,8 +26,8 @@
 			<div class="my-datatable-wrapper-style">
 				<DataTable
 					:value="history"
-					dataKey="account_id"
 					v-model:filters="filters"
+					dataKey="account_id"
 					:globalFilterFields="['opponent_name']"
 					class="p-datatable-sm my-text-style"
 					striped-rows
@@ -49,10 +49,10 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								style="width: 6rem"
 								placeholder="Search by date"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -70,10 +70,10 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								style="width: 8rem"
 								placeholder="Search by opponent"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -85,10 +85,10 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								style="width: 6rem"
 								class="p-column-filter"
 								placeholder="Search by venue"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -150,9 +150,9 @@
 				<div>
 					<Button
 						label="Return"
-						@click="closeModal"
 						class="p-button-sm"
 						autofocus
+						@click="closeModal"
 					/>
 				</div>
 			</template>
@@ -247,7 +247,7 @@
 	// Get player game history
 	//
 	const getHistory = async () => {
-		const { data, pending, error, refresh } = await useFetch(
+		const { data } = await useFetch(
 			`/game_player_stats/getplayergames/${selectedItem.value.account_id}`,
 			{
 				method: 'get',

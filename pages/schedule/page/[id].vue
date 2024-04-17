@@ -33,7 +33,7 @@
 
 	const getPlayers = async (game_id) => {
 		const url = `/game_player_stats/players/${game_id}`
-		const { data, error } = await useFetch(url, {
+		const { data } = await useFetch(url, {
 			method: 'get',
 		})
 		players.value = data.value
@@ -41,7 +41,7 @@
 
 	const getOne = async (id) => {
 		const url = `/game_player_stats/${id}`
-		const { data, error } = await useFetch(url, {
+		const { data } = await useFetch(url, {
 			method: 'get',
 		})
 		game.value = data.value

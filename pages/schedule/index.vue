@@ -13,8 +13,8 @@
 				<select-season
 					:startyear="startyear"
 					:currentyear="season"
-					@submitted="onSubmit"
 					class="mb-3"
+					@submitted="onSubmit"
 				/>
 
 				<select-game-type
@@ -71,8 +71,7 @@
 											text
 											class="cursor-pointer text-2xl md:text-3xl text-gray-300 shadow-4 font-bold"
 											@click.prevent="showGame(item.game_id)"
-										>
-										</Button>
+										/>
 									</div>
 									<div class="flex align-items-center border-soli">
 										<span class="text-2xl font-semibold">
@@ -103,8 +102,7 @@
 											text
 											size="small"
 											@click="showHistory(item.opponent_id)"
-										>
-										</Button>
+										/>
 										<span class="text-sm text-700">
 											{{ item.game_id }}
 										</span>
@@ -132,7 +130,7 @@
 							$dayjs.unix(info.date_ut).format('MMMM DD, YYYY @ ddd h:mm A')
 						}}</span
 					>
-					<h6 class="m-2 text-xl"></h6>
+					<h6 class="m-2 text-xl" />
 				</div>
 			</template>
 			<div class="m-1 p-1 text-sm">
@@ -143,9 +141,9 @@
 				<div>
 					<Button
 						label="Return"
-						@click="closeModal"
 						class="p-button-sm mt-2"
 						autofocus
+						@click="closeModal"
 					/>
 				</div>
 			</template>
@@ -228,9 +226,9 @@
 				<div>
 					<Button
 						label="Close"
-						@click="closeHistoryModal"
 						class="p-button-sm mt-2"
 						autofocus
+						@click="closeHistoryModal"
 					/>
 				</div>
 			</template>
@@ -239,8 +237,8 @@
 </template>
 
 <script setup>
-	const { $dayjs } = useNuxtApp()
 	import { usePlacemarkStore } from '~/stores/placemarkStore'
+	const { $dayjs } = useNuxtApp()
 	const placemark = usePlacemarkStore()
 	const { getGameLevelCode, getResultCode } = useGames()
 	// Initialize year select
@@ -254,7 +252,7 @@
 	const games = ref([])
 	const getSeason = async (season) => {
 		const url = `/game_player_stats/getseason/${season}`
-		const { data, error, pending } = await useFetch(url, {
+		const { data, error } = await useFetch(url, {
 			method: 'get',
 		})
 		if (error.value) {

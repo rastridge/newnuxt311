@@ -35,12 +35,7 @@
 	//
 	// Get current sponsors
 	//
-	const {
-		data: sponsors,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/sponsors/getallcurrent', {
+	const { data: sponsors } = await useFetch('/sponsors/getallcurrent', {
 		method: 'get',
 	})
 </script>

@@ -13,8 +13,8 @@
 					<select-year
 						:startyear="startyear"
 						:currentyear="year"
-						@submitted="onSubmit"
 						class="mb-3"
+						@submitted="onSubmit"
 					/>
 				</div>
 			</div>
@@ -37,10 +37,10 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	const placemark = usePlacemarkStore()
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()
 	//

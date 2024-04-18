@@ -7,8 +7,6 @@
 	// Get content item id
 	//
 	const route = useRoute()
-	const id = ref(route.params.id)
-
 	//
 	// content form action
 	//

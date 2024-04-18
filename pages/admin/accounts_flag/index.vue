@@ -128,12 +128,11 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
-	import { useAlertStore } from '~/stores/alertStore'
-	const alert = useAlertStore()
+
 	const placemark = usePlacemarkStore()
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()
 
@@ -155,7 +154,7 @@
 	//
 	// Get all accounts
 	//
-	const { data: accounts, pending } = await getAll(app)
+	const { data: accounts } = await getAll(app)
 
 	//
 	// Filter members

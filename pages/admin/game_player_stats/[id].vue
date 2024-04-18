@@ -2,8 +2,7 @@
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { useAuthStore } from '~/stores/authStore'
-	const auth = useAuthStore()
+
 	//
 	// Get content item id
 	//

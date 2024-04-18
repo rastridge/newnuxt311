@@ -39,10 +39,10 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '@/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '@/stores/placemarkStore'
 	const placemark = usePlacemarkStore()
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()
 	const { $dayjs } = useNuxtApp()
@@ -66,7 +66,7 @@
 	//
 	// Get all contributions
 	//
-	const { data: contributions, pending } = await getAll(app)
+	const { data: contributions } = await getAll(app)
 
 	//
 	// Select year action

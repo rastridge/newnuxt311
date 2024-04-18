@@ -14,8 +14,8 @@
 					<select-season
 						:startyear="startyear"
 						:currentyear="season"
-						@submitted="onSubmit"
 						class="mb-3"
+						@submitted="onSubmit"
 					/>
 
 					<select-game-type
@@ -43,11 +43,11 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
 
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	const placemark = usePlacemarkStore()
 
 	// initialize renderlist

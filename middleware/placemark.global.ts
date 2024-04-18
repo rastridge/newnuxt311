@@ -26,6 +26,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 				from.path.slice(0, 6) !== '/games' &&
 				from.path.slice(0, 5) !== '/stats')
 		) {
+			// empty?
 		}
 	}
 	//

@@ -28,9 +28,9 @@
 
 <script setup>
 	import asleepatdesk from '~/assets/imgs/asleepatdesk.jpeg'
-	import { useAuthStore } from '~/stores/authStore'
+	/* 	import { useAuthStore } from '~/stores/authStore'
 	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	const placemark = usePlacemarkStore()
 	const auth = useAuthStore()
-	const sess = JSON.parse(sessionStorage.getItem('auth'))
+	const sess = JSON.parse(sessionStorage.getItem('auth')) */
 </script>

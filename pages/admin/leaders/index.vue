@@ -26,10 +26,10 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	const placemark = usePlacemarkStore()
 
 	//
@@ -41,7 +41,7 @@
 	const { getAccess } = useRenderListAccess()
 	const { editable, addable, deleteable, statusable, viewable } = getAccess(app)
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()
-	const { data: leaders, pending } = await getAll(app)
+	const { data: leaders } = await getAll(app)
 
 	//
 	// Renderlist actions

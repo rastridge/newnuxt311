@@ -125,8 +125,8 @@
 		<div class="renderlist-enclosure">
 			<DataTable
 				:value="filteredData"
-				class="p-datatable-sm renderlist-enclosure my-text-style"
 				ref="dt"
+				class="p-datatable-sm renderlist-enclosure my-text-style"
 				scrollable
 				scrollHeight="600px"
 				dataKey="account_id"
@@ -203,8 +203,8 @@
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
-	const placemark = usePlacemarkStore()
+	/* 	import { usePlacemarkStore } from '~/stores/placemarkStore'
+	const placemark = usePlacemarkStore() */
 
 	const { $dayjs } = useNuxtApp()
 
@@ -306,6 +306,7 @@
 	const makeLabels = () => {
 		navigateTo('/admin/member_info/makelabels')
 	}
+	/* 	
 	const memberType = (member_type_id, member_type2_id) => {
 		let match = false
 		if (member_type_id.value == '4') {
@@ -317,6 +318,7 @@
 		}
 		return match
 	}
+ */
 	const yesEmail = (account_email) => {
 		return !(
 			/\bnon/i.test(account_email) ||

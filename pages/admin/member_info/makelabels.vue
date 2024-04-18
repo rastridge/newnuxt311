@@ -91,10 +91,10 @@
 </template>
 
 <script setup>
+	import { useAuthStore } from '~/stores/authStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { useAuthStore } from '~/stores/authStore'
 	const auth = useAuthStore()
 
 	const app = ref('member_info')

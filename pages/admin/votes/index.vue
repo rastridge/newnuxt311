@@ -7,18 +7,20 @@
 			<div class="topsectionitem">
 				<display-admin-header :title="app" />
 			</div>
-			<div class="topsectionitem w-40rem">
-				<div
-					class="text-left my-text-style border-round-md md:border-round-lg shadow-6 mb-3 m-2 p-4"
-				>
-					<h6 class="font-semibold">For each new voting round</h6>
-					<p>1. Change status of old votes to inactive</p>
-					<p>2. Create new voting questions</p>
-					<p>
-						3. Send newsletter to voters including this message: "Go to
-						https://buffalorugby.org/admin/votes/start to begin voting"
-					</p>
-				</div>
+			<div class="topsectionitem">
+				<Card>
+					<template #content>
+						<div class="my-text-style text-left">
+							<p class="font-semibold">For each new voting round</p>
+							<p>1. Change status of old votes to inactive</p>
+							<p>2. Create new voting questions</p>
+							<p>
+								3. Send newsletter to voters including this message: "Go to
+								https://buffalorugby.org/admin/votes/start to begin voting"
+							</p>
+						</div>
+					</template>
+				</Card>
 			</div>
 		</div>
 

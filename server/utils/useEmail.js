@@ -183,11 +183,11 @@ export default function useEmail() {
 		let result = ''
 		const post_req = https.request(post_options, function (res) {
 			res.setEncoding('utf8')
-			res.on('data', function (chunk) {
+			res.on('data', function () {
 				// result = chunk
-				const { statusCode, statusMessage, headers } = res
+				const { statusMessage } = res
 				// console.log('statusCode, statusMessage ', statusCode, statusMessage)
-				result = statusCode
+				result = statusMessage
 			})
 			res.on('error', function (e) {
 				result = 'Error: ' + e.message

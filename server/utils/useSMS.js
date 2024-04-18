@@ -11,10 +11,8 @@ export default function useSMS() {
 				body: sms_body_text,
 				// statusCallback: `/sms/MessageStatus`,
 			})
-			// .then(function (res) {})
-			.catch(function (err) {
-				console.log(err)
-			})
+			.then((message) => console.log('message.status = ', message.status))
+			.catch((err) => console.log(err))
 	}
 	return {
 		sendOneSMS,

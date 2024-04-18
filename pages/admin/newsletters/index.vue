@@ -12,8 +12,8 @@
 				<select-year
 					:startyear="startyear"
 					:currentyear="year"
-					@submitted="onSubmit"
 					class="mb-3"
+					@submitted="onSubmit"
 				/>
 			</div>
 		</div>
@@ -35,10 +35,11 @@
 </template>
 
 <script setup>
+	import { usePlacemarkStore } from '~/stores/placemarkStore'
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
+
 	const placemark = usePlacemarkStore()
 	const { deleteOne, changeStatusOne } = useFetchAll()
 	//
@@ -67,12 +68,9 @@
 	// Get a year
 	//
 	const getYearOfNewsletters = async (year) => {
-		const { data, pending, error, refresh } = await useFetch(
-			`/newsletters/year/${year}`,
-			{
-				method: 'get',
-			}
-		)
+		const { data } = await useFetch(`/newsletters/year/${year}`, {
+			method: 'get',
+		})
 		year_data.value = data.value
 	}
 

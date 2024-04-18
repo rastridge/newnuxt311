@@ -133,8 +133,8 @@
 	// /////////////////////////
 	// rturn labels
 	// ////////////////////////
-	const makeReturnLabels = async (e) => {
-		const { data, error } = await useFetch('/member_info/makereturnlabels', {
+	const makeReturnLabels = async () => {
+		const { data } = await useFetch('/member_info/makereturnlabels', {
 			method: 'POST',
 			headers: {
 				authorization: auth.user.token,

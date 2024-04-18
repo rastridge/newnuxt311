@@ -23,10 +23,10 @@
 						<p class="my-subheader-style">Members Info</p>
 
 						<FormKit
+							v-model="member_type_id"
 							type="select"
 							label="Select member type"
 							placeholder="Select member type"
-							v-model="member_type_id"
 							:options="memberTypeOptions"
 							validation="required"
 						/>
@@ -40,26 +40,26 @@
 							<tr>
 								<td class="text-right">Good Email</td>
 								<td>
-									<input type="radio" v-model="email" value="1" />
+									<input v-model="email" type="radio" value="1" />
 								</td>
 								<td>
-									<input type="radio" v-model="email" value="0" />
+									<input v-model="email" type="radio" value="0" />
 								</td>
 								<td>
-									<input type="radio" v-model="email" value="2" />
+									<input v-model="email" type="radio" value="2" />
 								</td>
 							</tr>
 
 							<tr>
 								<td class="text-right">Marked for emailing</td>
 								<td>
-									<input type="radio" v-model="marked_for_email" value="1" />
+									<input v-model="marked_for_email" type="radio" value="1" />
 								</td>
 								<td>
-									<input type="radio" v-model="marked_for_email" value="0" />
+									<input v-model="marked_for_email" type="radio" value="0" />
 								</td>
 								<td>
-									<input type="radio" v-model="marked_for_email" value="2" />
+									<input v-model="marked_for_email" type="radio" value="2" />
 								</td>
 							</tr>
 
@@ -67,53 +67,53 @@
 								<td class="text-right">Email Opened in last 90 days</td>
 								<td>
 									<!-- Yes -->
-									<input type="radio" v-model="email_opened" value="1" />
+									<input v-model="email_opened" type="radio" value="1" />
 								</td>
 								<td>
 									<!-- No  -->
-									<input type="radio" v-model="email_opened" value="0" />
+									<input v-model="email_opened" type="radio" value="0" />
 								</td>
 								<td>
 									<!-- Does not apply  -->
-									<input type="radio" v-model="email_opened" value="2" />
+									<input v-model="email_opened" type="radio" value="2" />
 								</td>
 							</tr>
 
 							<tr>
 								<td class="text-right">Good Address</td>
 								<td>
-									<input type="radio" v-model="address" value="1" />
+									<input v-model="address" type="radio" value="1" />
 								</td>
 								<td>
-									<input type="radio" v-model="address" value="0" />
+									<input v-model="address" type="radio" value="0" />
 								</td>
 								<td>
-									<input type="radio" v-model="address" value="2" />
+									<input v-model="address" type="radio" value="2" />
 								</td>
 							</tr>
 							<tr>
 								<td class="text-right">Marked for mailing (calendar)</td>
 								<td>
-									<input type="radio" v-model="marked_for_mail" value="1" />
+									<input v-model="marked_for_mail" type="radio" value="1" />
 								</td>
 								<td>
-									<input type="radio" v-model="marked_for_mail" value="0" />
+									<input v-model="marked_for_mail" type="radio" value="0" />
 								</td>
 								<td>
-									<input type="radio" v-model="marked_for_mail" value="2" />
+									<input v-model="marked_for_mail" type="radio" value="2" />
 								</td>
 							</tr>
 
 							<tr>
 								<td class="text-right">Donated</td>
 								<td>
-									<input type="radio" v-model="donated" value="1" />
+									<input v-model="donated" type="radio" value="1" />
 								</td>
 								<td>
-									<input type="radio" v-model="donated" value="0" />
+									<input v-model="donated" type="radio" value="0" />
 								</td>
 								<td>
-									<input type="radio" v-model="donated" value="2" />
+									<input v-model="donated" type="radio" value="2" />
 								</td>
 							</tr>
 						</table>

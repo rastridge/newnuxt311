@@ -40,7 +40,7 @@
 
 	const seasons = computed(() => {
 		{
-			let thisyear = parseInt($dayjs().format('YYYY'))
+			const thisyear = parseInt($dayjs().format('YYYY'))
 			let temp = []
 			for (let yr = props.startyear; yr <= thisyear; yr++) {
 				temp.push({

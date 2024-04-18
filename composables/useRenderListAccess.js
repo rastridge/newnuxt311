@@ -1,8 +1,4 @@
-import { useAuthStore } from '~/stores/authStore'
-
 export default function useRenderListAccess() {
-	const auth = useAuthStore()
-
 	function getAccess(app) {
 		let access = {
 			editable: false,

@@ -26,8 +26,8 @@
 
 	<div class="my-form-style">
 		<FormKit
-			type="form"
 			v-model="question"
+			type="form"
 			:config="{ validationVisibility: 'live' }"
 			submit-label="Submit"
 			@submit="submitForm"
@@ -46,8 +46,8 @@
 		<FormKit
 			v-model="choice_values"
 			type="list"
-			dynamic
 			#default="{ items, node, value }"
+			dynamic
 		>
 			<div v-if="props.id !== 0">
 				<FormKit
@@ -69,15 +69,15 @@
 					:index="index"
 					:label="`# ${index + 1}`"
 					suffix-icon="trash"
-					@suffix-icon-click="
-						() => node.input(value.filter((_, i) => i !== index))
-					"
 					:sections-schema="{
 						suffixIcon: {
 							// change wrapper to a button for accessibility
 							$el: 'button',
 						},
 					}"
+					@suffix-icon-click="
+						() => node.input(value.filter((_, i) => i !== index))
+					"
 				/>
 
 				<Button
@@ -105,16 +105,15 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: Number, default: 0 },
 	})
 
-	let question = ref({})
+	const question = ref({})
 	const choices = ref([
 		{ vote_choice_id: 0, vote_choice: '', vote_picked_cnt: 0 },
 	])
 	const choice_values = ref([])
 	const updated_choices = ref([])
-	const value = ref([])
 
 	//
 	// edit if there is an id - add if not
@@ -145,7 +144,7 @@
 		choices.value = choices_data.value
 
 		// create list of choice_values for Formkit (only contains choice value)
-		choices.value.forEach((choice, index, array) => {
+		choices.value.forEach((choice) => {
 			if (choice.vote_choice !== '') {
 				choice_values.value.push(choice.vote_choice)
 			}
@@ -159,7 +158,7 @@
 		// insert updated choice values back into choices
 
 		// problem in add
-		choice_values.value.forEach((item, index, array) => {
+		choice_values.value.forEach((item, index) => {
 			if (props.id !== 0) {
 				updated_choices.value.push({
 					vote_choice: item,

@@ -1,3 +1,5 @@
+const { $dayjs } = useNuxtApp()
+
 export default function useUnixtime() {
 	const convertToUnixtime = async (dt) => {
 		const ut = $dayjs.unix(dt)

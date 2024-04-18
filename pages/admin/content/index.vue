@@ -39,9 +39,8 @@
 	// Initialize values for Renderlist
 	//
 	const app = 'content'
-	const page = ref(placemark.getPage)
 	const { editable, addable, deleteable, statusable, viewable } = getAccess(app)
-	const { data: content_data, pending } = await getAll(app)
+	const { data: content_data } = await getAll(app)
 
 	//
 	// Renderlist actions

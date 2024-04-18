@@ -138,8 +138,6 @@ export default function useEmail() {
 			return email
 		}
 
-		const rec_cnt = recipientss.length
-
 		let sentlist = []
 		let email = ''
 

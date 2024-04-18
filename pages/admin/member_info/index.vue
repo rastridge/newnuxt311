@@ -124,8 +124,8 @@
 		</div>
 		<div class="renderlist-enclosure">
 			<DataTable
-				:value="filteredData"
 				ref="dt"
+				:value="filteredData"
 				class="p-datatable-sm renderlist-enclosure my-text-style"
 				scrollable
 				scrollHeight="600px"

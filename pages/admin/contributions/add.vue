@@ -3,10 +3,7 @@
 		middleware: ['auth'],
 	})
 	const { onSubmitAdd } = useSubmit()
-	//
-	// Get content item id
-	//
-	const route = useRoute()
+
 	//
 	// content form action
 	//

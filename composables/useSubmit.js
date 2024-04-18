@@ -10,7 +10,7 @@ export default function useSubmit() {
 	const alert = useAlertStore()
 
 	const onSubmitEdit = async function (app, form_state) {
-		const { data, error } = await useFetch(`/${app}/editone`, {
+		const { data } = await useFetch(`/${app}/editone`, {
 			method: 'post',
 			body: form_state,
 			headers: {
@@ -25,7 +25,7 @@ export default function useSubmit() {
 	}
 
 	const onSubmitAdd = async function (app, form_state) {
-		const { data, error } = await useFetch(`/${app}/addone`, {
+		const { data } = await useFetch(`/${app}/addone`, {
 			method: 'post',
 			body: form_state,
 			headers: {
@@ -40,7 +40,7 @@ export default function useSubmit() {
 	}
 
 	const onSubmitAddByGuest = async function (app, form_state) {
-		const { data, error } = await useFetch(`/${app}/addonebyguest`, {
+		const { data } = await useFetch(`/${app}/addonebyguest`, {
 			method: 'post',
 			body: form_state,
 		})

@@ -40,9 +40,9 @@
 		<div class="my-simple-card-style">
 			<div class="my-datatable-wrapper-style">
 				<DataTable
+					ref="dt"
 					:value="filteredData"
 					class="p-datatable-sm my-text-style"
-					ref="dt"
 					scrollable
 					scrollHeight="600px"
 					dataKey="account_id"

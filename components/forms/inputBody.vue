@@ -3,8 +3,8 @@
 		<div class="bg-white mb-2">
 			<ClientOnly>
 				<quill-editor
-					contentType="html"
 					v-model:content="localfield"
+					contentType="html"
 					toolbar="full"
 					:modules="modules"
 					@textChange="changeState()"

@@ -1,9 +1,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit Game"
 			@submit="submitForm(state)"
 		>
@@ -127,9 +127,9 @@
 				</p>
 				<div v-if="reset">
 					<FormKit
+						v-model="previous_game_id"
 						type="select"
 						label="Select another roster"
-						v-model="previous_game_id"
 						placeholder="Select another roster"
 						:options="previousgames"
 					/>
@@ -275,7 +275,6 @@
 	const state = ref({})
 	const reset = ref('')
 	const reset_opponent = ref(false)
-	const pending_players = ref('')
 
 	const addForm = ref(props.id === 0)
 
@@ -332,11 +331,7 @@
 	// Get other options for form
 	//
 	// Game types
-	const {
-		data: gt,
-		error: error3,
-		pending: pending_gametypes,
-	} = await useFetch(`/game_player_stats/getgametypes`, {
+	const { data: gt } = await useFetch(`/game_player_stats/getgametypes`, {
 		method: 'get',
 		headers: {
 			authorization: auth.user.token,
@@ -345,9 +340,9 @@
 	})
 	// if (!pending_gametypes) {
 	// convert for formkit
-	let result = []
+	const result = []
 	gt.value.map((old) => {
-		let n = {}
+		const n = {}
 		n.label = old.game_type
 		n.value = old.game_type_id
 		result.push(n)
@@ -355,11 +350,7 @@
 	gametypes.value = result
 	// }
 	// player names suggestions
-	const {
-		data: players_sug,
-		error: error4,
-		pending: pending_suggestions,
-	} = await useFetch(`/accounts/suggestions`, {
+	const { data: players_sug } = await useFetch(`/accounts/suggestions`, {
 		method: 'get',
 		headers: {
 			authorization: auth.user.token,
@@ -370,15 +361,12 @@
 
 	// opponent names suggestions
 	//
-	const { data: opps_sug, error: error5 } = await useFetch(
-		`/opponents/suggestions`,
-		{
-			method: 'get',
-			headers: {
-				authorization: auth.user.token,
-			},
-		}
-	)
+	const { data: opps_sug } = await useFetch(`/opponents/suggestions`, {
+		method: 'get',
+		headers: {
+			authorization: auth.user.token,
+		},
+	})
 	suggestions_opponents.value = opps_sug.value
 
 	//
@@ -389,11 +377,7 @@
 		//
 		// Initialize Edit form game area
 		//
-		const {
-			data: game,
-			pending: pending_game,
-			error,
-		} = await useFetch(`/game_player_stats/${props.id}`, {
+		const { data: game } = await useFetch(`/game_player_stats/${props.id}`, {
 			method: 'get',
 			headers: {
 				authorization: auth.user.token,
@@ -414,22 +398,21 @@
 		//
 		// Initialize Edit form Players area
 		//
-		const {
-			data: p,
-			error: error2,
-			pending: pending_players,
-		} = await useFetch(`/game_player_stats/players/${props.id}`, {
-			method: 'get',
-			headers: {
-				authorization: auth.user.token,
-			},
-			// lazy: true,
-		})
+		const { data: p } = await useFetch(
+			`/game_player_stats/players/${props.id}`,
+			{
+				method: 'get',
+				headers: {
+					authorization: auth.user.token,
+				},
+				// lazy: true,
+			}
+		)
 		players.value = p.value
 
 		// if (!pending_players.value) {
 		// Special for Primevue AutoComplete
-		players.value.forEach((value, index) => {
+		players.value.forEach((value) => {
 			selectedPlayers.value.push({
 				account_id: value.player_id ? value.player_id : '0',
 				member_firstname: value.pfn ? value.pfn : '',
@@ -502,20 +485,19 @@
 	const previousgames = ref([])
 	const previous_game_id = ref(0)
 	const getPreviousGames = async (date_ut) => {
-		const {
-			data,
-			error: error6,
-			pending: pending6,
-		} = await useFetch(`/game_player_stats/getprevious/${date_ut}`, {
-			method: 'get',
-			headers: {
-				authorization: auth.user.token,
-			},
-		})
+		const { data } = await useFetch(
+			`/game_player_stats/getprevious/${date_ut}`,
+			{
+				method: 'get',
+				headers: {
+					authorization: auth.user.token,
+				},
+			}
+		)
 		// convert for formkit select previous games
-		let result = []
+		const result = []
 		data.value.map((old) => {
-			let n = {}
+			const n = {}
 			n.label =
 				$dayjs.unix(old.date_ut).format('YYYY-MM-DD') +
 				' - ' +
@@ -527,12 +509,6 @@
 			result.push(n)
 		})
 		previousgames.value = result
-	}
-	//
-	// insert opponent
-	//
-	const resetOpponent = () => {
-		c
 	}
 
 	//
@@ -555,16 +531,15 @@
 	})
 
 	const getReplacePlayers = async (game_id) => {
-		const {
-			data: rp,
-			error,
-			pending,
-		} = await useFetch(`/game_player_stats/players/${game_id}`, {
-			method: 'get',
-			headers: {
-				authorization: auth.user.token,
-			},
-		})
+		const { data: rp } = await useFetch(
+			`/game_player_stats/players/${game_id}`,
+			{
+				method: 'get',
+				headers: {
+					authorization: auth.user.token,
+				},
+			}
+		)
 
 		// Needed to reset player stats
 		const replacementPlayers = rp.value.map((item) => {
@@ -586,7 +561,7 @@
 
 		selectedPlayers.value = []
 		selectedReplacements.value = []
-		replacementPlayers.forEach((value, index) => {
+		replacementPlayers.forEach((value) => {
 			// adjustment for AutoCompletes
 			selectedPlayers.value.push({
 				account_id: value.player_id ? value.player_id : '0',
@@ -608,13 +583,13 @@
 	// form handlers
 	//
 	const submitForm = (state) => {
-		selectedPlayers.value.forEach((value, index, array) => {
+		selectedPlayers.value.forEach((value, index) => {
 			players.value[index].player_id = value.account_id
 			players.value[index].pfn = value.member_firstname
 			players.value[index].pln = value.member_lastname
 			players.value[index].pname = value.title
 		})
-		selectedReplacements.value.forEach((value, index, array) => {
+		selectedReplacements.value.forEach((value, index) => {
 			players.value[index].replaced_by = value.account_id
 			players.value[index].rfn = value.member_firstname
 			players.value[index].rln = value.member_lastname

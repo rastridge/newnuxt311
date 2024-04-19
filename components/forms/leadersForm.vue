@@ -1,8 +1,8 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
-			type="form"
 			v-model="state"
+			type="form"
 			submit-label="Submit"
 			@submit="submitForm(state)"
 		>
@@ -89,29 +89,23 @@
 	//
 	if (props.id !== '0') {
 		// get opponent with id === props.id
-		const { data, pending, error, refresh } = await useFetch(
-			`/leaders/${props.id}`,
-			{
-				key: props.id,
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+		const { data } = await useFetch(`/leaders/${props.id}`, {
+			key: props.id,
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 		state.value = data.value
 		// year exists - can't be changed
 		year_disabled.value = true
 	} else {
-		const { data, pending, error, refresh } = await useFetch(
-			`/leaders/getyears`,
-			{
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+		const { data } = await useFetch(`/leaders/getyears`, {
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 		years.value = data.value
 	}
 

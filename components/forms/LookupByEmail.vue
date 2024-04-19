@@ -20,15 +20,12 @@
 	const emailStatus = ref(true)
 
 	const lookupByEmail = async (state) => {
-		const { data, error } = await useFetch(
-			`/accounts/email/${state.account_email}`,
-			{
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+		const { data } = await useFetch(`/accounts/email/${state.account_email}`, {
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 
 		if (data.value.length > 0) {
 			navigateTo(`/admin/accounts/men/${data.value[0].id}`)

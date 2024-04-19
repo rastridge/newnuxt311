@@ -1,8 +1,8 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
-			type="form"
 			v-model="state"
+			type="form"
 			:config="{ validationVisibility: 'live' }"
 			submit-label="Submit"
 			@submit="submitForm"
@@ -100,7 +100,7 @@
 	//
 	// Initialize form
 	//
-	let state = ref({})
+	const state = ref({})
 	state.value.content_body = 'Add content here'
 	const dt = $dayjs()
 	state.value.content_release_dt = dt.format('YYYY-MM-DD')
@@ -111,12 +111,7 @@
 	//
 	if (props.id !== '0') {
 		// get user with id === props.id
-		const {
-			data: content_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/content/${props.id}`, {
+		const { data: content_data } = await useFetch(`/content/${props.id}`, {
 			key: props.id,
 			method: 'get',
 			headers: {

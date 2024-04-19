@@ -75,7 +75,7 @@
 	//
 	// Initialize Add form
 	//
-	let state = ref({})
+	const state = ref({})
 
 	const dt = $dayjs()
 	state.value.release_dt = dt.format('YYYY-MM-DD')
@@ -89,12 +89,7 @@
 		//
 		// Initialize Edit form
 		//
-		const {
-			data: events_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/events/${props.id}`, {
+		const { data: events_data } = await useFetch(`/events/${props.id}`, {
 			method: 'get',
 			headers: {
 				authorization: auth.user.token,

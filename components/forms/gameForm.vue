@@ -276,7 +276,7 @@
 	const reset = ref('')
 	const reset_opponent = ref(false)
 
-	const addForm = ref(props.id === 0)
+	const addForm = ref(props.id === '0')
 
 	//
 	// Player name autocomplete

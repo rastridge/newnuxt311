@@ -1,9 +1,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit"
 			@submit="submitForm(state)"
 		>
@@ -80,12 +80,11 @@
 	const props = defineProps({
 		id: { type: String, default: '0' },
 	})
-	const fileInput = ref(null)
 
 	//
 	// Initialize Add form
 	//
-	let state = ref({})
+	const state = ref({})
 	//
 	// edit if there is an id - add if not
 	//
@@ -93,12 +92,7 @@
 		//
 		// Initialize Edit form
 		//
-		const {
-			data: archive_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/archive/${props.id}`, {
+		const { data: archive_data } = await useFetch(`/archive/${props.id}`, {
 			method: 'get',
 			headers: {
 				authorization: auth.user.token,

@@ -2,14 +2,14 @@
 	<Button
 		class="p-button-sm mb-1"
 		label="Cancel"
-		@click="cancelForm()"
 		severity="warning"
+		@click="cancelForm()"
 	></Button>
 </template>
 
 <script setup>
 	const props = defineProps({
-		destination: { String, default: '/', required: false },
+		destination: { type: String, default: '/', required: false },
 	})
 	const cancelForm = () => {
 		navigateTo(props.destination)

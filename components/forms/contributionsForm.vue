@@ -14,9 +14,9 @@
 			/>
 		</div>
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit"
 			@submit="submitForm"
 		>
@@ -121,7 +121,7 @@
 	}
 
 	const getPrevious = async () => {
-		const { data, pending, error, refresh } = await useFetch(
+		const { data } = await useFetch(
 			`/contributions/previous/${selectedItem.value.account_id}`,
 			{
 				method: 'get',

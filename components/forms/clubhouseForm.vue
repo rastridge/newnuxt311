@@ -1,9 +1,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit"
 			@submit="submitForm(state)"
 		>
@@ -84,7 +84,6 @@
 	const saving = ref(false)
 	const error = ref(false)
 
-	const { $dayjs } = useNuxtApp()
 	//
 	// Outgoing
 	//
@@ -95,12 +94,12 @@
 	const props = defineProps({
 		id: { type: String, default: '0' },
 	})
-	const fileInput = ref(null)
+	// const fileInput = ref(null)
 
 	//
 	// Initialize Add form
 	//
-	let state = ref({})
+	const state = ref({})
 	//
 	// edit if there is an id - add if not
 	//
@@ -108,12 +107,7 @@
 		//
 		// Initialize Edit form
 		//
-		const {
-			data: clubhouse_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/clubhouse/${props.id}`, {
+		const { data: clubhouse_data } = await useFetch(`/clubhouse/${props.id}`, {
 			method: 'get',
 			headers: {
 				authorization: auth.user.token,

@@ -72,7 +72,7 @@
 
 	const url = `/game_player_stats/getadjacent/${props.direction}`
 
-	const { data, pending, error, refresh } = await useFetch(url, {
+	const { data } = await useFetch(url, {
 		method: 'get',
 	})
 	stats1.value = data.value[0]

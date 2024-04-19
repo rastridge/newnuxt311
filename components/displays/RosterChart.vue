@@ -21,19 +21,16 @@
 		//
 		// Get chart data
 		//
-		const { data, pending, error, refresh } = await useFetch(
-			'/game_player_stats/getrosterstats',
-			{
-				method: 'get',
-			}
-		)
+		const { data } = await useFetch('/game_player_stats/getrosterstats', {
+			method: 'get',
+		})
 		return data.value
 	}
 
 	const setChartData = () => {
 		const documentStyle = getComputedStyle(document.documentElement)
 
-		let datasets = []
+		const datasets = []
 		const labels = rosters.value.map((item) => item.yr)
 
 		const label1 = 'Complete Roster'
@@ -73,10 +70,6 @@
 	const setChartOptions = () => {
 		const documentStyle = getComputedStyle(document.documentElement)
 		const textColor = documentStyle.getPropertyValue('--text-color')
-		const textColorSecondary = documentStyle.getPropertyValue(
-			'--text-color-secondary'
-		)
-		const surfaceBorder = documentStyle.getPropertyValue('--surface-border')
 
 		return {
 			maintainAspectRatio: false,

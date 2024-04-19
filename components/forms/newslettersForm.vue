@@ -6,9 +6,9 @@
 	</p>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit Newsletter"
 			@submit="submitForm"
 		>
@@ -88,7 +88,7 @@
 	//
 	// Formkit initial state
 	//
-	let state = ref({})
+	const state = ref({})
 	state.value.newsletter_recipient_type_id = 9
 	state.value.newsletter_id = ''
 	state.value.newsletter_body_html = ''
@@ -108,12 +108,7 @@
 		//
 		// assign existing data to Edit form
 		//
-		const {
-			data: news_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/newsletters/${props.id}`, {
+		const { data: news_data } = await useFetch(`/newsletters/${props.id}`, {
 			method: 'get',
 		})
 		state.value = news_data.value
@@ -146,9 +141,9 @@
 	// Convert for Formkit "label" "value"
 	//
 	const setNewsletterRecipientTypeOptions = (nltypes) => {
-		let result = []
+		const result = []
 		nltypes.map((old) => {
-			let n = {}
+			const n = {}
 			n.label = old.newsletter_recipient_type
 			n.value = old.newsletter_recipient_type_id
 			result.push(n)

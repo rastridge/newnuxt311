@@ -3,9 +3,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit"
 			@submit="submitForm(state)"
 		>
@@ -72,7 +72,7 @@
 	//
 	// Initialize Add form
 	//
-	let state = ref({})
+	const state = ref({})
 
 	const dt = $dayjs()
 	state.value.release_dt = dt.format('YYYY-MM-DD')
@@ -85,12 +85,7 @@
 		//
 		// Initialize Edit form
 		//
-		const {
-			data: payments_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/payments/${props.id}`, {
+		const { data: payments_data } = await useFetch(`/payments/${props.id}`, {
 			method: 'get',
 			headers: {
 				authorization: auth.user.token,

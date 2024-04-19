@@ -1,9 +1,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit member"
 			@submit="submitForm"
 		>
@@ -57,18 +57,18 @@
 				validation="required"
 			/>
 			<FormKit
+				id="account_addr_country"
 				type="select"
 				label="Country"
 				name="account_addr_country"
-				id="account_addr_country"
 				:options="justCountries"
 				validation="required"
 			/>
 			<FormKit
+				id="account_addr_state"
 				type="select"
 				label="Region"
 				name="account_addr_state"
-				id="account_addr_state"
 				:options="justRegions"
 				validation="required"
 			/>

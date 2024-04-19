@@ -2,9 +2,9 @@
 	<div>
 		<div class="my-form-style">
 			<FormKit
+				v-model="state"
 				type="form"
 				:config="{ validationVisibility: 'live' }"
-				v-model="state"
 				submit-label="Submit member"
 				@submit="submitForm"
 			>
@@ -59,18 +59,18 @@
 					validation="required"
 				/>
 				<FormKit
+					id="account_addr_country"
 					type="select"
 					label="Country"
 					name="account_addr_country"
-					id="account_addr_country"
 					:options="justCountries"
 					validation="required"
 				/>
 				<FormKit
+					id="account_addr_state"
 					type="select"
 					label="Region"
 					name="account_addr_state"
-					id="account_addr_state"
 					:options="justRegions"
 					validation="required"
 				/>
@@ -81,11 +81,11 @@
 					validation="required"
 				/>
 				<FormKit
+					v-model="state.account_addr_phone"
 					type="tel"
 					label="Phone number"
 					name="account_addr_phone"
 					placeholder="+1##########"
-					v-model="state.account_addr_phone"
 					validation="required | matches:/^\+[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/"
 					:validation-messages="{
 						matches: 'US/CA only. Must be in the format +1#########',
@@ -179,8 +179,8 @@
 			<Button
 				type="button"
 				label="Continue"
-				@click="visible = false"
 				autofocus
+				@click="visible = false"
 			/>
 		</template>
 	</Dialog>
@@ -188,10 +188,8 @@
 
 <script setup>
 	import { getNode } from '@formkit/core'
-	import { useAuthStore } from '~/stores/authStore'
 	import { useAlertStore } from '~/stores/alertStore'
 	import { color } from 'chart.js/helpers'
-	const auth = useAuthStore()
 	const alert = useAlertStore()
 	const { $dayjs } = useNuxtApp()
 	const { getCountries, setRegions } = useLocations()
@@ -245,7 +243,6 @@
 	onMounted(() => {
 		// Use the IDs of the inputs you want to get
 		const countryNode = getNode('account_addr_country')
-		const stateNode = getNode('account_addr_state')
 
 		// Here we are listening for the 'commit' event
 		countryNode.on('commit', ({ payload }) => {

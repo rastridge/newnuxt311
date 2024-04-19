@@ -1,9 +1,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit Opponent"
 			@submit="submitForm(state)"
 		>
@@ -80,19 +80,14 @@
 	//
 	// Initialize form
 	//
-	let state = ref({})
+	const state = ref({})
 
 	//
 	// edit if there is an id - add if not
 	//
 	if (props.id !== '0') {
 		// get opponent with id === props.id
-		const {
-			data: opponents_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/opponents/${props.id}`, {
+		const { data: opponents_data } = await useFetch(`/opponents/${props.id}`, {
 			key: props.id,
 			method: 'get',
 			headers: {

@@ -11,7 +11,7 @@
 
 			<table>
 				<tbody class="my-text-style">
-					<tr v-for="item in history">
+					<tr v-for="item in history" :key="item.date_ut">
 						<td>
 							{{ $dayjs.unix(item.date_ut).format('ddd MMM D YYYY') }}
 						</td>
@@ -39,7 +39,7 @@
 	const history = ref([])
 
 	const props = defineProps({
-		opponent_id: { type: Number, required: true },
+		opponent_id: { type: String, required: true },
 	})
 
 	const url = `/game_player_stats/history/${props.opponent_id}`

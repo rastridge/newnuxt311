@@ -99,8 +99,8 @@
 						<td>
 							<div>
 								<input
-									type="radio"
 									v-model="state.perms[index].admin_perm"
+									type="radio"
 									value="3"
 								/>
 							</div>
@@ -108,8 +108,8 @@
 						<td>
 							<div>
 								<input
-									type="radio"
 									v-model="state.perms[index].admin_perm"
+									type="radio"
 									value="2"
 								/>
 							</div>
@@ -117,8 +117,8 @@
 						<td>
 							<div>
 								<input
-									type="radio"
 									v-model="state.perms[index].admin_perm"
+									type="radio"
 									value="1"
 								/>
 							</div>
@@ -126,8 +126,8 @@
 						<td>
 							<div>
 								<input
-									type="radio"
 									v-model="state.perms[index].admin_perm"
+									type="radio"
 									value="0"
 								/>
 							</div>

@@ -52,9 +52,9 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								placeholder="Search by name"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>

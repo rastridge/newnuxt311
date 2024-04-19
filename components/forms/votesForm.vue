@@ -44,8 +44,8 @@
 		<!-- FormKit list input Voodoo -->
 		<h6>Choices</h6>
 		<FormKit
-			v-model="choice_values"
 			#default="{ items, node, value }"
+			v-model="choice_values"
 			type="list"
 			dynamic
 		>

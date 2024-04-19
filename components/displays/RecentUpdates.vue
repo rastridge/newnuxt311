@@ -25,12 +25,7 @@
 	//
 	// Get current news
 	//
-	const {
-		data: accounts,
-		pending,
-		error,
-		refresh,
-	} = await useFetch('/accounts/getrecentupdates', {
+	const { data: accounts } = await useFetch('/accounts/getrecentupdates', {
 		method: 'get',
 	})
 </script>

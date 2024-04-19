@@ -40,9 +40,9 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								placeholder="Search by name"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -57,9 +57,9 @@
 							<InputText
 								v-model="filterModel.value"
 								type="text"
-								@input="filterCallback()"
 								class="p-column-filter"
 								placeholder="Search by year"
+								@input="filterCallback()"
 							/>
 						</template>
 					</Column>
@@ -71,11 +71,11 @@
 						<template #filter="{ filterModel, filterCallback }">
 							<Dropdown
 								v-model="filterModel.value"
-								@change="filterCallback()"
 								:options="member_types"
 								placeholder="Search by member type"
 								:showClear="true"
 								style="width: 10rem"
+								@change="filterCallback()"
 							>
 							</Dropdown>
 						</template>
@@ -136,7 +136,7 @@
 
 	// const  checkAccountId = (id) => id === 1
 
-	const onRowExpand = async (event) => {}
+	// const onRowExpand = async (event) => {}
 	//
 	// filter value criteria
 	//

@@ -320,17 +320,11 @@
 
 	const getOne = async (id) => {
 		const url = `/game_player_stats/${id}`
-		const { data, error } = await useFetch(url, {
+		const { data } = await useFetch(url, {
 			method: 'get',
 		})
-		if (error.value) {
-			throw createError({
-				...error.value,
-				statusMessage: `Could not get data from ${url}`,
-			})
-		} else {
-			info.value = data.value
-		}
+
+		info.value = data.value
 	}
 	const displayGameModal = ref(false)
 	const openModal = () => {

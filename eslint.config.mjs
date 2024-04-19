@@ -7,5 +7,7 @@ export default withNuxt({
 		'vue/v-on-event-hyphenation': 'off',
 		'vue/attribute-hyphenation': 'off',
 		'vue/html-self-closing': 'off',
+		'vue/prop-name-casing': 'off',
+		'vue/no-v-html': 'off',
 	},
 })

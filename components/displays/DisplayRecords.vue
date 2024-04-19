@@ -46,7 +46,7 @@
 <script setup>
 	const historytotals = ref()
 	const props = defineProps({
-		opponent_id: { type: Number, required: true },
+		opponent_id: { type: String, required: true },
 	})
 
 	const url = `/game_player_stats/totals/${props.opponent_id}`

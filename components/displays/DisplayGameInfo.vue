@@ -40,7 +40,6 @@
 </template>
 
 <script setup>
-	const { $dayjs } = useNuxtApp()
 	const { getGameLevelCode, getResultCode } = useGames()
 
 	const props = defineProps({

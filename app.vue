@@ -8,6 +8,7 @@
 <script setup>
 	// import { useMenuStore, useAuthStore } from '@/stores'
 	// const auth = useAuthStore()
+
 	import { useMenuStore } from '~/stores/menuStore'
 	const menuStore = useMenuStore()
 
@@ -31,8 +32,6 @@
 	if (localStorage.getItem('auth')) {
 		auth.loginAuto()
 	}
-
-	import '@formkit/themes/genesis'
 </script>
 
 <style lang="scss">

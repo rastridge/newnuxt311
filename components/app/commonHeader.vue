@@ -6,6 +6,6 @@
 
 <script setup>
 	const props = defineProps({
-		title: { String, required: true },
+		title: { type: String, required: true },
 	})
 </script>

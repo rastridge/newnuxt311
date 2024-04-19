@@ -7,9 +7,9 @@
 			optionValue="value"
 			placeholder="Select a Different Year"
 			:pt="{
-				root: { class: 'w-full md:w-14rem' },
-				item: { class: 'md:text-xl  font-semibold' },
-				input: { class: 'md:text-xl  font-semibold' },
+				root: { class: 'w-full' },
+				item: { class: 'text-sm md:text-lg  font-semibold' },
+				input: { class: 'text-sm md:text-lg  font-semibold' },
 			}"
 		/>
 	</div>

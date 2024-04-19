@@ -131,7 +131,7 @@
 	}
 
 	//
-	// get newsletter recipient types for Dropdown
+	// get newsletter recipient types
 	//
 	const { data: newsletterRecipientTypes } = await useFetch(
 		'/newsletters/newsletterrecipienttypes',

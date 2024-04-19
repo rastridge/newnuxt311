@@ -19,6 +19,7 @@
 
 				<select-game-type
 					:currenttype="gametype"
+					class="mb-3"
 					@submitted="onSubmitGameType"
 				/>
 			</div>

@@ -25,7 +25,7 @@ export default function useFetchAll() {
 	}
 
 	const changeStatusOne = async (app, { id, status }) => {
-		const { pending } = await useFetch(`/${app}/status`, {
+		await useFetch(`/${app}/status`, {
 			method: 'POST',
 			headers: {
 				authorization: auth.user.token,

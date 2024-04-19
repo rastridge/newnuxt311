@@ -13,7 +13,7 @@ export default function useNewsletter() {
 
 		state.newsletter_id = data.value.insertId
 		if (send === 'sendNow') {
-			const { data } = await useFetch('/newsletters/send', {
+			await useFetch('/newsletters/send', {
 				method: 'post',
 				body: state,
 				headers: {
@@ -24,7 +24,7 @@ export default function useNewsletter() {
 	}
 
 	const editNewsletter = async (state, send) => {
-		const { data } = await useFetch('/newsletters/editone', {
+		await useFetch('/newsletters/editone', {
 			method: 'post',
 			body: state,
 			headers: {
@@ -33,7 +33,7 @@ export default function useNewsletter() {
 		})
 
 		if (send === 'sendNow') {
-			const { data } = await useFetch('/newsletters/send', {
+			await useFetch('/newsletters/send', {
 				method: 'post',
 				body: state,
 				headers: {

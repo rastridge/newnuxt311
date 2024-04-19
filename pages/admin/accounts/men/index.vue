@@ -20,6 +20,11 @@
 					optionLabel="label"
 					optionValue="value"
 					placeholder="Select a member type"
+					:pt="{
+						root: { class: 'w-full md:w-20rem' },
+						item: { class: 'text-sm md:text-lg  font-semibold' },
+						input: { class: 'text-sm md:text-lg  font-semibold' },
+					}"
 				/>
 			</div>
 

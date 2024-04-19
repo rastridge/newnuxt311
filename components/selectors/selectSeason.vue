@@ -7,8 +7,8 @@
 			optionValue="year"
 			:pt="{
 				root: { class: 'w-full md:w-20rem' },
-				item: { class: 'md:text-xl  font-semibold' },
-				input: { class: 'md:text-xl  font-semibold' },
+				item: { class: 'text-sm md:text-lg  font-semibold' },
+				input: { class: 'text-sm md:text-lg  font-semibold' },
 			}"
 		/>
 	</div>
@@ -41,7 +41,7 @@
 	const seasons = computed(() => {
 		{
 			const thisyear = parseInt($dayjs().format('YYYY'))
-			let temp = []
+			const temp = []
 			for (let yr = props.startyear; yr <= thisyear; yr++) {
 				temp.push({
 					year: yr,

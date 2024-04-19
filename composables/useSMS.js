@@ -12,7 +12,7 @@ export default function useSMS() {
 		})
 		state.sms_id = data.value.insertId
 		if (send === 'sendNow') {
-			const { data } = await useFetch('/sms/send', {
+			await useFetch('/sms/send', {
 				method: 'post',
 				body: state,
 				headers: {
@@ -24,7 +24,7 @@ export default function useSMS() {
 	}
 
 	const editSMS = async (state, send) => {
-		const { data } = await useFetch('/sms/editone', {
+		await useFetch('/sms/editone', {
 			method: 'post',
 			body: state,
 			headers: {
@@ -32,7 +32,7 @@ export default function useSMS() {
 			},
 		})
 		if (send === 'sendNow') {
-			const { data } = await useFetch('/sms/send', {
+			await useFetch('/sms/send', {
 				method: 'post',
 				body: state,
 				headers: {

@@ -102,7 +102,7 @@
 		emit('submitted', state)
 	}
 
-	// get newletter recipient types for Dropdown
+	// get newletter recipient types
 	//
 	const { data: newsletterRecipientTypes } = await useFetch(
 		'/newsletters/newsletterrecipienttypes',

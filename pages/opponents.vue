@@ -74,6 +74,11 @@
 								:options="opponent_types"
 								:showClear="true"
 								style="width: 10rem"
+								:pt="{
+									root: { class: 'w-full md:w-20rem' },
+									item: { class: 'text-sm md:text-lg  font-semibold' },
+									input: { class: 'text-sm md:text-lg  font-semibold' },
+								}"
 								@change="filterCallback()"
 							>
 							</Dropdown>

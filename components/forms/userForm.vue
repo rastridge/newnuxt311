@@ -203,7 +203,7 @@
 	//
 	// Are we Adding or editing?
 	//
-	const addForm = props.id === 0
+	const addForm = props.id === '0'
 	if (addForm) {
 		// Init perms for add
 		//

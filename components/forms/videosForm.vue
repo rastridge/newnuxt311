@@ -85,7 +85,6 @@
 	// edit if there is an id - add if not
 	//
 	if (props.id !== '0') {
-		// get opponent with id === props.id
 		const { data } = await useFetch(`/videos/${props.id}`, {
 			key: props.id,
 			method: 'get',

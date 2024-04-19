@@ -1,6 +1,6 @@
 <template>
 	<div class="my-form-style">
-		<h6 v-if="props.id" class="text-left my-text-style font-semibold">
+		<h6 v-if="props.id !== '0'" class="text-left my-text-style font-semibold">
 			Contributor {{ state.contribution_name }}
 		</h6>
 		<div v-else class="mb-2">
@@ -135,37 +135,16 @@
 
 	// Add
 	//
-	if (!props.id) {
-		//
-		// get suggestions
-		const { data, pending, error, refresh } = await useFetch(
-			`/accounts/suggestions`,
-			{
-				key: props.id,
-				method: 'get',
-			}
-		)
-		suggestions.value = data.value
-		//
-		// initialize add form
-		//
-		state.value.contribution_date = $dayjs().format('YYYY-MM-DD')
-		state.value.contribution_showName = true
-		state.value.contribution_showAmount = true
-	} else {
-		//
+	if (props.id !== '0') {
 		// edit
 		//
-		const { data, pending, error, refresh } = await useFetch(
-			`/contributions/${props.id}`,
-			{
-				key: props.id,
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+		const { data } = await useFetch(`/contributions/${props.id}`, {
+			key: props.id,
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 		state.value = data.value
 		// Format for Formkit calendar? ??
 		/* 		state.value.contribution_date = $dayjs(data.value.contribution_date).format(
@@ -177,6 +156,20 @@
 		state.value.contribution_showAmount = data.value.contribution_showAmount
 			? true
 			: false
+	} else {
+		//
+		// get suggestions
+		const { data } = await useFetch(`/accounts/suggestions`, {
+			key: props.id,
+			method: 'get',
+		})
+		suggestions.value = data.value
+		//
+		// initialize add form
+		//
+		state.value.contribution_date = $dayjs().format('YYYY-MM-DD')
+		state.value.contribution_showName = true
+		state.value.contribution_showAmount = true
 	}
 
 	//

@@ -188,7 +188,7 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 	//
 	// initialize form for add
@@ -210,7 +210,7 @@
 	//
 	// EDIT if there is an id - ADD if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		//
 		// Initialize Edit form
 		//

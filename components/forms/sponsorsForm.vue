@@ -3,9 +3,9 @@
 		<display-alert />
 
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit"
 			@submit="submitForm(state)"
 		>
@@ -104,8 +104,8 @@
 	const alert = useAlertStore()
 	const auth = useAuthStore()
 	const saving = ref(false)
-	const fileInput = ref(null)
-	const image = ref(null)
+	// const fileInput = ref(null)
+	// const image = ref(null)
 
 	//
 	// Outgoing
@@ -115,28 +115,25 @@
 	// Incoming id
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 	//
 	// Initialize form
 	//
-	let state = ref({})
+	const state = ref({})
 
 	//
 	// edit if there is an id - add if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		// get opponent with id === props.id
-		const { data, pending, error, refresh } = await useFetch(
-			`/sponsors/${props.id}`,
-			{
-				key: props.id,
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+		const { data } = await useFetch(`/sponsors/${props.id}`, {
+			key: props.id,
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 		state.value = data.value
 		//
 		// Insert to make images responsive
@@ -159,7 +156,6 @@
 
 	const customUploader = async (event) => {
 		state.value.ad_image_path = null
-
 		const file = event.files[0]
 
 		// voodoo

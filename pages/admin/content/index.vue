@@ -29,8 +29,6 @@
 	definePageMeta({
 		middleware: ['auth'],
 	})
-	import { usePlacemarkStore } from '~/stores/placemarkStore'
-	const placemark = usePlacemarkStore()
 
 	const { getAll, deleteOne, changeStatusOne } = useFetchAll()
 	const { getAccess } = useRenderListAccess()

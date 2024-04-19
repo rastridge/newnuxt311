@@ -1,9 +1,9 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
+			v-model="state"
 			type="form"
 			:config="{ validationVisibility: 'live' }"
-			v-model="state"
 			submit-label="Submit Video"
 			@submit="submitForm(state)"
 		>
@@ -73,29 +73,26 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	//
 	// Initialize form
 	//
-	let state = ref({})
+	const state = ref({})
 
 	//
 	// edit if there is an id - add if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		// get opponent with id === props.id
-		const { data, pending, error, refresh } = await useFetch(
-			`/videos/${props.id}`,
-			{
-				key: props.id,
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+		const { data } = await useFetch(`/videos/${props.id}`, {
+			key: props.id,
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 		state.value = data.value
 
 		// Format for Primevue calendar

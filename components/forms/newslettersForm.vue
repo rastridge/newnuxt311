@@ -65,7 +65,7 @@
 	// Incoming i
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 	//
 	// incoming from inputBody component
@@ -104,7 +104,7 @@
 	//
 	// Editing if there is an id - Adding if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		//
 		// assign existing data to Edit form
 		//

@@ -1,5 +1,5 @@
 <template>
-	<div v-if="props.id !== 0">
+	<div v-if="props.id !== '0'">
 		<div class="topsectioncenter">
 			<div class="topsectionitem">
 				<div
@@ -45,11 +45,11 @@
 		<h6>Choices</h6>
 		<FormKit
 			v-model="choice_values"
-			type="list"
 			#default="{ items, node, value }"
+			type="list"
 			dynamic
 		>
-			<div v-if="props.id !== 0">
+			<div v-if="props.id !== '0'">
 				<FormKit
 					v-for="(item, index) in items"
 					:key="item"
@@ -105,7 +105,7 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { type: Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	const question = ref({})
@@ -118,7 +118,7 @@
 	//
 	// edit if there is an id - add if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		// Initialize Edit form
 		//
 		// get question by id
@@ -159,7 +159,7 @@
 
 		// problem in add
 		choice_values.value.forEach((item, index) => {
-			if (props.id !== 0) {
+			if (props.id !== '0') {
 				updated_choices.value.push({
 					vote_choice: item,
 					vote_picked_cnt: choices.value[index].vote_picked_cnt,

@@ -113,18 +113,13 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	//
 	// Initialize Edit form
 	//
-	const {
-		data: formdata,
-		pending,
-		error,
-		refresh,
-	} = await useFetch(`/accounts/${props.id}`, {
+	const { data: formdata } = await useFetch(`/accounts/${props.id}`, {
 		key: props.id,
 		method: 'get',
 	})
@@ -138,7 +133,7 @@
 	// set regions for initial country
 	// justRegions.value = setRegions(state.value.account_addr_country)
 
-	//
+	/* 	//
 	// progress modal
 	//
 	const displayModal = ref(true)
@@ -147,7 +142,7 @@
 	// }
 	const closeModal = () => {
 		displayModal.value = false
-	}
+	} */
 
 	//
 	// form handlers
@@ -162,7 +157,7 @@
 	onMounted(() => {
 		// Use the IDs of the inputs you want to get
 		const countryNode = getNode('account_addr_country')
-		const stateNode = getNode('account_addr_state')
+		// const stateNode = getNode('account_addr_state')
 
 		// Here we are listening for the 'commit' event
 		countryNode.on('commit', ({ payload }) => {

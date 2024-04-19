@@ -4,8 +4,8 @@
 	</p>
 	<div class="my-form-style">
 		<FormKit
-			type="form"
 			v-model="state"
+			type="form"
 			:config="{ validationVisibility: 'live' }"
 			submit-label="Submit"
 			@submit="submitForm"
@@ -48,7 +48,7 @@
 	// Incoming id
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 	//
 	// Outgoing form data
@@ -58,7 +58,7 @@
 	//
 	// Formkit initial Add state
 	//
-	let state = ref({})
+	const state = ref({})
 	state.value.sms_recipient_type_id = 13
 	state.value.admin_user_id = auth.user.admin_user_id
 
@@ -69,16 +69,11 @@
 	//
 	// Editing if there is an id - Adding if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		//
 		// get sms data for id
 		//
-		const {
-			data: sms_data,
-			pending,
-			error,
-			refresh,
-		} = await useFetch(`/sms/${props.id}`, {
+		const { data: sms_data } = await useFetch(`/sms/${props.id}`, {
 			method: 'get',
 			headers: {
 				authorization: auth.user.token,
@@ -90,7 +85,7 @@
 		//
 		state.value = sms_data.value
 		// additional
-		state.admin_user_id = auth.user.admin_user_id
+		state.value.admin_user_id = auth.user.admin_user_id
 
 		sms_opened_cnt.value = sms_data.value.sms_recp_cnt
 	}
@@ -117,9 +112,9 @@
 	// convert for Formkit "label" "value"
 	//
 	const setNewsletterRecipientTypeOptions = (nltypes) => {
-		let result = []
+		const result = []
 		nltypes.map((old) => {
-			let n = {}
+			const n = {}
 			n.label = old.newsletter_recipient_type
 			n.value = old.newsletter_recipient_type_id
 			result.push(n)

@@ -264,7 +264,7 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	// Reactive variables
@@ -384,7 +384,7 @@
 	//
 	// edit if there is an id
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		//
 		// Initialize Edit form game area
 		//

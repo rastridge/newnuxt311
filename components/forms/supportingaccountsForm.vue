@@ -1,8 +1,8 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
-			type="form"
 			v-model="state"
+			type="form"
 			:config="{ validationVisibility: 'live' }"
 			submit-label="Submit"
 			@submit="submitForm(state)"
@@ -76,7 +76,7 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	//
@@ -87,17 +87,14 @@
 	//
 	// edit if there is an id - add if not
 	//
-	if (props.id !== 0) {
-		const { data, pending, error, refresh } = await useFetch(
-			`/supporting_accounts/${props.id}`,
-			{
-				key: props.id,
-				method: 'get',
-				headers: {
-					authorization: auth.user.token,
-				},
-			}
-		)
+	if (props.id !== '0') {
+		const { data } = await useFetch(`/supporting_accounts/${props.id}`, {
+			key: props.id,
+			method: 'get',
+			headers: {
+				authorization: auth.user.token,
+			},
+		})
 		state.value = data.value
 	}
 

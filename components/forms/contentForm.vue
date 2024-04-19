@@ -2,8 +2,8 @@
 	<div class="my-form-style">
 		<FormKit
 			type="form"
-			:config="{ validationVisibility: 'live' }"
 			v-model="state"
+			:config="{ validationVisibility: 'live' }"
 			submit-label="Submit"
 			@submit="submitForm"
 		>
@@ -80,7 +80,7 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	//
@@ -109,7 +109,7 @@
 	//
 	// edit if there is an id - add if not
 	//
-	if (props.id !== 0) {
+	if (props.id !== '0') {
 		// get user with id === props.id
 		const {
 			data: content_data,

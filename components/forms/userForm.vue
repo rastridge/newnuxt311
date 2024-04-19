@@ -20,8 +20,8 @@
 			>Username</label
 		>
 		<InputText
-			v-model="state.admin_user_name"
 			id="admin_user_name"
+			v-model="state.admin_user_name"
 			type="text"
 			class="w-full mb-3"
 			size="small"
@@ -32,8 +32,8 @@
 			>Email</label
 		>
 		<InputText
-			v-model="state.admin_user_email"
 			id="admin_user_email"
+			v-model="state.admin_user_email"
 			type="email"
 			class="w-full mb-3"
 			size="small"
@@ -52,8 +52,8 @@
 				>New Password:</label
 			>
 			<InputText
-				v-model="state.password"
 				id="password"
+				v-model="state.password"
 				type="password"
 				class="w-full mb-3"
 				size="small"
@@ -64,8 +64,8 @@
 				>Repeat Password:</label
 			>
 			<InputText
-				v-model="repeatPass"
 				id="repeatPass"
+				v-model="repeatPass"
 				type="password"
 				class="w-full mb-3"
 				size="small"
@@ -163,7 +163,7 @@
 	// Incoming
 	//
 	const props = defineProps({
-		id: { Number, default: 0 },
+		id: { type: String, default: '0' },
 	})
 
 	//

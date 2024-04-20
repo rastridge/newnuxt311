@@ -6,9 +6,6 @@
 </template>
 
 <script setup>
-	// import { useMenuStore, useAuthStore } from '@/stores'
-	// const auth = useAuthStore()
-
 	import { useMenuStore } from '~/stores/menuStore'
 	const menuStore = useMenuStore()
 

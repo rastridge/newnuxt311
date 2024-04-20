@@ -47,7 +47,10 @@ export default defineNuxtConfig({
 		},
 	},
 	css: [
-		'primevue/resources/themes/aura-light-green/theme.css',
+		// formkit
+		'@/assets/sass/layout/themes/genesis/theme.css',
+		// primevue
+		'primevue/resources/themes/saga-blue/theme.css',
 		'primevue/resources/primevue.css',
 		'primeicons/primeicons.css',
 		'primeflex/primeflex.css',

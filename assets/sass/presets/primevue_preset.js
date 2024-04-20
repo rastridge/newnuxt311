@@ -30,7 +30,7 @@ const pvPreset = {
 				minWidth: '10rem',
 				'background-color': '#CCC',
 			},
-			class: 'shadow-4 m-1 p-1 border-round-lg',
+			class: 'shadow-4 m-1 p-1 border-1 border-round-lg',
 		},
 		header: {
 			style: {
@@ -46,12 +46,14 @@ const pvPreset = {
 		subtitle: {
 			style: {
 				color: '#000',
+				'background-color': '#DDD',
+				padding: '1rem',
 			},
 		},
-		body: {
+		content: {
 			style: {
 				padding: '1rem',
-				'background-color': '#CCC',
+				'background-color': '#DDD',
 				color: '#000',
 			},
 		},

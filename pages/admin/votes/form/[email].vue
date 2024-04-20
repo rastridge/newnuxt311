@@ -28,8 +28,6 @@
 </template>
 
 <script setup>
-	import '@formkit/themes/genesis'
-
 	const route = useRoute()
 
 	const account_email = ref(route.params.email)

@@ -85,7 +85,9 @@
 					>
 						<template #body="slotProps">
 							<div>
-								{{ $dayjs(slotProps.data.contribution_date).format('ll') }}
+								{{
+									$dayjs(slotProps.data.contribution_date).format('MMM YYYY')
+								}}
 							</div>
 						</template>
 					</Column>

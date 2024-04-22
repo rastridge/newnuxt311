@@ -48,7 +48,7 @@
 						><div class="my-text-style text-center">After</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2011/Buffalo-Rugby-and-Habitat-for-Humanity-Team-Up/2011_Jan_Habitat_-_20-me.jpg"
 							class="w-full"
 							loading="lazy"
@@ -64,7 +64,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2011/Buffalo-Rugby-and-Habitat-for-Humanity-Team-Up/2011_Jan_Habitat_-_19-me.jpg"
 							class="w-full"
 							loading="lazy"
@@ -95,7 +95,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2013/2013Habitat-me.jpeg"
 							class="w-full"
 							loading="lazy"
@@ -111,7 +111,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2013/2013-Nov-Habitat-for-Humanity/2013_Nov_Habitat_-_04-me.jpg"
 							class="w-full"
 							loading="lazy"
@@ -127,7 +127,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2015/2015-Habitat-for-Humanity/2015_Mar_Habitat_-_6-me.jpg"
 							class="w-full"
 							loading="lazy"
@@ -143,7 +143,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2016/2016Habitat-me.jpeg"
 							class="w-full"
 							loading="lazy"
@@ -159,7 +159,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/upload/2018/01/06/20180106095736-91a274d5-sm.jpg"
 							class="w-full"
 							loading="lazy"
@@ -175,7 +175,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/upload/2020/02/03/20200203114429-c21712e3.jpg"
 							class="w-full"
 							loading="lazy"
@@ -191,7 +191,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://media.buffalorugby.org/_img/_news_newsletters/1684069054325-AST_7104_640.jpeg"
 							class="w-full"
 							loading="lazy"
@@ -206,7 +206,7 @@
 						</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://media.buffalorugby.org/_img/_news_newsletters/1701282308391-now-turkeys.jpeg"
 							class="w-full"
 							loading="lazy"

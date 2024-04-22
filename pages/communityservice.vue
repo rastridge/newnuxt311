@@ -35,7 +35,7 @@
 						><div class="my-text-style text-center">Before</div></template
 					>
 					<template #content
-						><nuxt-img
+						><img
 							src="https://piwigo.buffalorugby.org/piwigo/_data/i/galleries/albums/2011/Buffalo-Rugby-and-Habitat-for-Humanity-Team-Up/2011_Jan_Habitat_-_02-me.jpg"
 							class="w-full"
 							loading="lazy"

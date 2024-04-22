@@ -26,9 +26,9 @@
 	await menuStore.initCustomMenuItems()
 
 	// stay logged in?
-	if (localStorage.getItem('auth')) {
+	/* 	if (localStorage.getItem('auth')) {
 		auth.loginAuto()
-	}
+	} */
 </script>
 
 <style lang="scss">

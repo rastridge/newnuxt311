@@ -12,17 +12,25 @@
 				:key="item.id"
 				class="flex justify-content-left"
 			>
-				<template #header>
-					{{ $dayjs(item.event_dt).format('MMM D, YYYY') }}
+				<!-- 				<template #header>
+					<span class="md:text-xl font-semibold">{{
+						$dayjs(item.event_dt).format('MMM D, YYYY')
+					}}</span>
 				</template>
 				<template #subtitle>
-					<span class="text-xl text-white font-semibold">{{
+					<span class="md:text-xl font-semibold">{{
 						item.title
 					}}</span></template
-				>
-				<template #content
-					>{{ item.event_description }} LOCATION:
-					{{ item.event_location }}</template
+				> -->
+				<template #content>
+					<p class="md:text-xl font-semibold">
+						{{ $dayjs(item.event_dt).format('MMM D, YYYY') }}
+					</p>
+					<p class="md:text-xl font-semibold">{{ item.title }}</p>
+
+					<p class="md:text-lg">
+						{{ item.event_description }} LOCATION: {{ item.event_location }}
+					</p></template
 				>
 			</Card>
 		</div>

@@ -30,14 +30,14 @@
 					/>
 
 					<div class="flex align-items-center justify-content-between mb-6">
-						<div class="flex align-items-center">
+						<!-- 						<div class="flex align-items-center">
 							<span>Keep me logged in</span>&nbsp;
 							<Checkbox
 								v-model="keeploggedin"
 								:binary="true"
 								class="mr-2"
 							></Checkbox>
-						</div>
+						</div> -->
 
 						<nuxt-link
 							to="/resetpassword"
@@ -62,7 +62,8 @@
 	const handleSubmit = async (state) => {
 		// console.log(state.username + state.password + keeploggedin.value)
 		if (state.username && state.password) {
-			auth.login(state.username, state.password, keeploggedin.value) // pinia auth store
+			// auth.login(state.username, state.password, keeploggedin.value) // pinia auth store
+			auth.login(state.username, state.password) // pinia auth store
 		}
 	}
 </script>

@@ -31,8 +31,12 @@
 
 					<div class="flex align-items-center justify-content-between mb-6">
 						<div class="flex align-items-center">
-							<span class="text-sm">Keep me logged in&nbsp;</span>
-							<Checkbox v-model="keeploggedin" :binary="true" class="mr-2" />
+							<span>Keep me logged in</span>&nbsp;
+							<Checkbox
+								v-model="keeploggedin"
+								:binary="true"
+								class="mr-2"
+							></Checkbox>
 						</div>
 
 						<nuxt-link

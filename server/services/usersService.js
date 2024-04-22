@@ -505,7 +505,7 @@ async function resetRequest({ username }) {
 	// if username exists
 	if (cnt) {
 		const msg =
-			'To reset your user admin password <a href="https://buffalorugby.orgreset/' +
+			'To reset your user admin password <a href="https://buffalorugby.org/reset/' +
 			username +
 			'" rel="noopener noreferrer" target="_blank" >Click here</a>'
 

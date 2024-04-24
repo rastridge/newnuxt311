@@ -75,6 +75,12 @@
 				name="account_addr_postal"
 				validation="required"
 			/>
+			<!-- 			<div>
+				<input-telephone
+					:tnumber="state.account_addr_phone"
+					@update="(t) => (state.account_addr_phone = t.value)"
+				/>
+			</div> -->
 			<FormKit
 				v-model="state.account_addr_phone"
 				type="tel"

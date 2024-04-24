@@ -7,6 +7,33 @@
 				</div>
 			</template>
 		</Carousel>
+		<Card class="h-20rem flex justify-content-center">
+			<template #content>
+				<div class="w-full surface-500">
+					<span class="font-bold text-lg">Club News</span>
+					<Menu
+						:model="items"
+						class="w-20rem"
+						style="background-color: transparent"
+					/>
+				</div>
+			</template>
+		</Card>
+		<Card class="w-full h-20rem bg-white">
+			<template #content>
+				<span class="text-center font-bold text-lg"
+					>Games - Latest and Past Schedule and Results</span
+				>
+			</template>
+		</Card>
+		<Card class="w-full h-20rem bg-white">
+			<template #content>
+				<span class="text-center font-bold text-lg"
+					>Participate - Join the oldest and biggest - Compete at the highest
+					level</span
+				>
+			</template>
+		</Card>
 	</div>
 </template>
 
@@ -33,5 +60,9 @@
 		{ id: 8, url: screen8 },
 		{ id: 9, url: screen9 },
 		{ id: 10, url: screen10 },
+	])
+	const items = ref([
+		{ label: 'Latest', icon: 'pi pi-plus' },
+		{ label: 'Events', icon: 'pi pi-plus' },
 	])
 </script>

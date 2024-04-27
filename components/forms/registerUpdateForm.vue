@@ -78,17 +78,11 @@
 				name="account_addr_postal"
 				validation="required"
 			/>
-			<FormKit
-				type="tel"
-				label="Phone number"
-				name="account_addr_phone"
-				placeholder="+1##########"
-				validation="required | matches:/^\+[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/"
-				:validation-messages="{
-					matches: 'US/CA only. Must be in the format +1#########',
-				}"
-				validation-visibility="live"
+			<input-telephone
+				:tnumber="state.account_addr_phone"
+				@update="(t) => (state.account_addr_phone = t.value)"
 			/>
+
 			<display-alert />
 			<display-cancelform />
 		</FormKit>

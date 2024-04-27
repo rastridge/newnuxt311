@@ -7,5 +7,5 @@
 </template>
 
 <script setup>
-	const phonenumber = ref('+1716')
+	const phonenumber = ref(null)
 </script>

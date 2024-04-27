@@ -108,23 +108,12 @@
 				name="account_addr_postal"
 				validation="required"
 			/>
-			<!-- 			<input-telephone
+
+			<input-telephone
 				:tnumber="state.account_addr_phone"
 				@update="(t) => (state.account_addr_phone = t.value)"
-			/> -->
-
-			<FormKit
-				v-model="state.account_addr_phone"
-				type="tel"
-				label="Phone number"
-				name="account_addr_phone"
-				placeholder="+1##########"
-				validation="required | matches:/^\+[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/"
-				:validation-messages="{
-					matches: 'US/CA only. Must be in the format +1#########',
-				}"
-				validation-visibility="live"
 			/>
+
 			<FormKit
 				type="select"
 				label="Member type"
@@ -201,7 +190,7 @@
 	const state = ref({})
 
 	state.value.member_year = $dayjs().format('YYYY')
-	state.value.account_addr_phone = '+1716'
+	state.value.account_addr_phone = null
 	state.value.account_addr_state = 'NY'
 	state.value.account_addr_street_ext = ''
 	state.value.account_addr_country = 'US'

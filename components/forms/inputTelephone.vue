@@ -1,7 +1,23 @@
 <template>
-	<div class="text-lg font-semibold mb-1">Telephone</div>
-	<VueTelInput v-model="t" @input="submitTel" />
-	<div class="mb-2"></div>
+	<div class="formkit-outer">
+		<div class="formkit-wrapper">
+			<div class="formkit-label">Telephone</div>
+			<div class="text-small vue-tel-inout">
+				<VueTelInput
+					v-model="t"
+					@input="submitTel"
+					:preferredCountries="['us', 'gb', 'au', 'ca']"
+					:enabledCountryCode="enableCC"
+					:autoFormat="atoformat"
+					:defaultCountry="'us'"
+					:inputOptions="inputOptions"
+				/>
+			</div>
+			<div v-if="t !== null && t.length < 10" class="mt-1 text-red-500">
+				Phone number required
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
@@ -18,7 +34,9 @@
 	const submitTel = () => {
 		emit('update', t)
 	}
-
+	const atoformat = ref(true)
+	const inputOptions = ref({ showDialCode: true })
+	const enableCC = ref(false)
 	const bindProps = ref({
 		mode: 'international',
 		defaultCountry: 'US',
@@ -28,3 +46,9 @@
 		placeholder: 'Enter a phone numb',
 	})
 </script>
+
+<style scoped>
+	.vue-tel-input {
+		height: 45px;
+	}
+</style>

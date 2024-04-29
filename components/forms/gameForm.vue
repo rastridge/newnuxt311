@@ -172,7 +172,7 @@
 							:pt="{
 								input: {
 									class:
-										'w-6rem md:w-8rem lg:w-10rem my-text-style h-1rem md:h-2rem',
+										'w-6rem md:w-8rem lg:w-10rem text-xs md:text-sm h-1rem md:h-2rem',
 								},
 							}"
 							optionLabel="title"

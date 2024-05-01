@@ -183,7 +183,7 @@
 <script setup>
 	import { getNode } from '@formkit/core'
 	import { useAlertStore } from '~/stores/alertStore'
-	import { color } from 'chart.js/helpers'
+	// import { color } from 'chart.js/helpers'
 	const alert = useAlertStore()
 	const { $dayjs } = useNuxtApp()
 	const { getCountries, setRegions } = useLocations()

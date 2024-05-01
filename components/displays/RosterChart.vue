@@ -2,17 +2,15 @@
 	<div id="chart">
 		<div class="center-content">
 			<common-header title="How complete are the existing game rosters?" />
-			<Chart
-				type="bar"
-				:data="chartData"
-				:options="chartOptions"
-				class="h-30rem"
-			/>
+			<Bar :data="chartData" :options="chartOptions" class="h-30rem" />
 		</div>
 	</div>
 </template>
 
 <script setup>
+	import Chart from 'chart.js/auto'
+	import { Bar } from 'vue-chartjs'
+
 	const chartData = ref()
 	const chartOptions = ref()
 	const rosters = ref([])

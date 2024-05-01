@@ -113,7 +113,7 @@
 						</div>
 					</template>
 				</DataView>
-				<!-- <roster-chart /> -->
+				<roster-chart />
 			</div>
 		</div>
 

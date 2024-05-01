@@ -116,6 +116,7 @@
 				</DataTable>
 			</div>
 		</div>
+		<roster-chart />
 	</div>
 </template>
 

@@ -7,7 +7,7 @@
 				</div>
 			</template>
 		</Carousel>
-		<Card class="h-20rem flex justify-content-center">
+		<!-- 		<Card class="h-20rem flex justify-content-center">
 			<template #content>
 				<div class="w-full surface-500">
 					<span class="font-bold text-lg">Club News</span>
@@ -33,7 +33,7 @@
 					level</span
 				>
 			</template>
-		</Card>
+		</Card> -->
 	</div>
 </template>
 

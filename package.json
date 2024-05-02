@@ -47,6 +47,7 @@
 	"devDependencies": {
 		"dayjs-nuxt": "^2.1.9",
 		"eslint": "^9.0.0",
+		"nuxt-gtag": "^2.0.5",
 		"nuxt-primevue": "^0.3.1",
 		"sass": "^1.72.0",
 		"typescript": "^5.4.5"

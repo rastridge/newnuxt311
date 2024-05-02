@@ -38,6 +38,7 @@ export default defineNuxtConfig({
 		'@formkit/nuxt',
 		'@nuxt/image',
 		'@nuxt/eslint',
+		'nuxt-gtag',
 	],
 
 	primevue: {
@@ -68,6 +69,10 @@ export default defineNuxtConfig({
 	},
 
 	eslint: {},
+
+	gtag: {
+		id: 'G-Z3NSP2KEHY',
+	},
 	components: [
 		'~/components/app',
 		'~/components/selectors',

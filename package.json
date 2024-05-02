@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@formkit/nuxt": "^1.6.1",
 		"@formkit/themes": "^1.6.1",
-		"@nuxt/eslint": "^0.3.7",
+		"@nuxt/eslint": "^0.3.10",
 		"@nuxt/image": "^1.5.0",
 		"@pinia/nuxt": "^0.5.1",
 		"@unocss/reset": "^0.58.8",

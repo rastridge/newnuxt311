@@ -19,7 +19,6 @@
 		"@pinia/nuxt": "^0.5.1",
 		"@unocss/reset": "^0.58.8",
 		"@vueup/vue-quill": "^1.2.0",
-		"@vueuse/core": "^10.9.0",
 		"bcrypt": "^5.1.1",
 		"chart.js": "^4.4.2",
 		"country-region-data": "^3.0.0",

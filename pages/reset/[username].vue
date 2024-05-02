@@ -1,8 +1,8 @@
 <template>
 	<div class="my-form-style">
 		<FormKit
-			type="form"
 			id="password_reset"
+			type="form"
 			submit-label="Reset password"
 			@submit="submitHandler"
 		>

@@ -5,12 +5,12 @@
 			<div class="text-small vue-tel-inout">
 				<VueTelInput
 					v-model="t"
-					@input="submitTel"
 					:preferredCountries="['us', 'gb', 'au', 'ca']"
 					:enabledCountryCode="enableCC"
 					:autoFormat="atoformat"
 					:defaultCountry="'us'"
 					:inputOptions="inputOptions"
+					@input="submitTel"
 				/>
 			</div>
 			<div v-if="t !== null && t.length < 10" class="mt-1 text-red-500">
@@ -37,14 +37,14 @@
 	const atoformat = ref(true)
 	const inputOptions = ref({ showDialCode: true })
 	const enableCC = ref(false)
-	const bindProps = ref({
+	/* 	const bindProps = ref({
 		mode: 'international',
 		defaultCountry: 'US',
 		disabledFetchingCountry: false,
 		disabled: false,
 		disabledFormatting: false,
 		placeholder: 'Enter a phone numb',
-	})
+	}) */
 </script>
 
 <style scoped>

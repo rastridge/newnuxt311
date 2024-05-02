@@ -526,7 +526,7 @@
 		getReplacePlayers(newid)
 	}
 
-	watch(previous_game_id, (newid, oldid) => {
+	watch(previous_game_id, () => {
 		showReplaceDialog.value = true
 	})
 

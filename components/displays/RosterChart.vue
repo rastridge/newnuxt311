@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-	import Chart from 'chart.js/auto'
 	import { Bar } from 'vue-chartjs'
 
 	const chartData = ref()

@@ -39,6 +39,7 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'@nuxt/eslint',
 		'nuxt-gtag',
+		'@vueuse/nuxt',
 	],
 
 	primevue: {

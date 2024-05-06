@@ -1,35 +1,14 @@
-<!-- <template>
-	<div>
-		in testvmodel localtitle = {{ localtitle }}
-	</div>
-</template>
-
-<script setup>
-import { useVModel } from '@vueuse/core'
-
-const props = defineProps({
-	title: { type: String, required: true },
-})
-const emit = defineEmits(['update:title'])
-
-const localtitle = useVModel(props, 'title', emit)
-</script>
- -->
-
 <script setup>
 
-const text = 'ffffffaaaa'
-const props = defineProps({
-	modelValue: String,
-})
-const emit = defineEmits(['update:modelValue'])
-const data = useVModel(props, 'modelValue', emit)
-console.log(data)
+// const props = defineProps(['modelValue'])
+// const emit = defineEmits(['update:modelValue'])
 
-emit('update:modelValue', text)
-
+const modelValue = defineModel()
+// emit('update:modelValue', "changed from ''")
+modelValue.value = "xxxxxxx"
 </script>
 
 <template>
-	in child component emit text = {{ text }}
+	in testmodel modelValue = {{ modelValue }}
+	<!-- <input :value="props.modelValue" @input="emit('update:modelValue', $event.target.value)" /> -->
 </template>

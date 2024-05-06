@@ -36,6 +36,8 @@ const { $dayjs } = useNuxtApp()
 //
 
 const emit = defineEmits(['submitted'])
+
+
 //
 // Incoming
 //
@@ -60,7 +62,13 @@ const toggle = () => {
 //
 // Initialize form
 //
+/* 
 const state = ref({})
+
+ */
+
+const state = defineModel()
+
 state.value.content_body = 'Add content here'
 const dt = $dayjs()
 state.value.content_release_dt = dt.format('YYYY-MM-DD')

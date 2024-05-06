@@ -8,7 +8,7 @@ const { onSubmitEdit } = useSubmit()
 //
 const route = useRoute()
 const id = ref(route.params.id)
-const form_state = ref([])
+// const form_state = ref([])
 
 //
 // content form action

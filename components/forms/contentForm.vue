@@ -34,10 +34,7 @@ const saving = ref(false)
 const { $dayjs } = useNuxtApp()
 // Outgoing
 //
-
 const emit = defineEmits(['submitted'])
-
-
 //
 // Incoming
 //
@@ -62,12 +59,8 @@ const toggle = () => {
 //
 // Initialize form
 //
-/* 
+
 const state = ref({})
-
- */
-
-const state = defineModel()
 
 state.value.content_body = 'Add content here'
 const dt = $dayjs()

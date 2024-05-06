@@ -17,7 +17,6 @@ const onSubmit = async function (form_state) {
 	await onSubmitEdit('content', form_state)
 	navigateTo(`/admin/content`)
 }
-
 </script>
 
 <template>
@@ -32,7 +31,6 @@ const onSubmit = async function (form_state) {
 				<display-admin-header title="Edit custom page" />
 			</div>
 			<content-form :id="id" @submitted="onSubmit" />
-
 		</div>
 	</div>
 </template>

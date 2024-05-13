@@ -148,9 +148,6 @@ table, td { color: #000000; } </style>
   <tr style="vertical-align: top">
     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
     <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #dfdfdf;"><![endif]-->
-    
-  
-  
 <div class="u-row-container" style="padding: 0px;background-color: transparent">
   <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
@@ -160,7 +157,9 @@ table, td { color: #000000; } </style>
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
   <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
-  
+
+ <!-- TITLE -->
+ 
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
@@ -175,6 +174,8 @@ table, td { color: #000000; } </style>
     </tr>
   </tbody>
 </table>
+
+<!-- DATE -->
 
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
@@ -191,6 +192,7 @@ table, td { color: #000000; } </style>
 </table>
 
 <!-- SUBJECT -->
+
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
@@ -204,6 +206,8 @@ table, td { color: #000000; } </style>
     </tr>
   </tbody>
 </table>
+
+<!-- CONTENT -->
 
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
@@ -248,7 +252,7 @@ table, td { color: #000000; } </style>
         
   <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
     <p style="line-height: 140%;"> <p>This is Your Current Contact Info.</p>
-									<p> Please <a href="${HOSTING}/update/918J275B654I${recipient.account_id}" target="_blank"> click here update your info if necessary</a></p>
+									<p> Please <a href="${HOSTING}/update/918J275B654I${recipient.account_id}" target="_blank"> Update your info if necessary</a></p>
                    <table>
                     <tbody>
                      <tr><td>${recipient.member_firstname} ${recipient.member_lastname}</td></tr>

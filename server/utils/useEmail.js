@@ -168,7 +168,7 @@ table, td { color: #000000; } </style>
 				${TRACKINGPIXEL}
         
   <!--[if mso]><table width="100%"><tr><td><![endif]-->
-    <h1 style="margin: 0px; color: #0200e0; line-height: 140%; text-align: center; word-wrap: break-word; font-family: arial black,AvenirNext-Heavy,avant garde,arial; font-size: 36px; font-weight: 400;"><span><span><span><span>Buffal Rugby News</span></span></span></span></h1>
+    <h1 style="margin: 0px; color: #0200e0; line-height: 140%; text-align: center; word-wrap: break-word; font-family: arial black,AvenirNext-Heavy,avant garde,arial; font-size: 36px; font-weight: 400;"><span><span><span><span>Buffalo Rugby News</span></span></span></span></h1>
   <!--[if mso]></td></tr></table><![endif]-->
 
       </td>

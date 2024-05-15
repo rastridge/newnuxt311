@@ -1,15 +1,5 @@
 import mysql from 'mysql2/promise'
 
-/* const {
-	DB_DATABASE,
-	DB_PASSWORD,
-	DB_USER,
-	DB_HOST,
-	FROM,
-	FROM_NAME,
-	EE_API_KEY,
-} = useRuntimeConfig() */
-
 const { doDBQueryBuffalorugby } = useQuery()
 const { getConnectionBuffalorugby } = useDBConnection()
 const { sendNewsletters } = useEmail()
@@ -21,6 +11,7 @@ export const newslettersService = {
 	sendNewsletter,
 	trackNewsletter,
 	getOne,
+	getOpenedCount,
 	addOne,
 	editOne,
 	deleteOne,
@@ -262,6 +253,15 @@ async function getOne(id) {
 	const sql = `select * from inbrc_newsletters where newsletter_id = ` + id
 	const newsletter = await doDBQueryBuffalorugby(sql)
 	return newsletter[0]
+}
+
+//
+async function getOpenedCount(id) {
+	const sql =
+		`select count(*) as opened_cnt from inbrc_newsletter_openings where newsletter_id = ` +
+		id
+	const opened = await doDBQueryBuffalorugby(sql)
+	return opened[0]
 }
 
 async function trackNewsletter(query) {

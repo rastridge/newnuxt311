@@ -1,12 +1,4 @@
-<!-- <script setup>
-</script>
 
-<template>
-
-	<testvmodel v-model:title="dfdsfasdf" />
-	<br />
-	in parent title = {{ title }}
-</template> -->
 <script setup>
 const originaltitle = ref('from testpage')
 

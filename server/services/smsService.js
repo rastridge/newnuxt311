@@ -1,5 +1,6 @@
 const { doDBQueryBuffalorugby } = useQuery()
 const { sendOneSMS } = useSMS()
+const { typeMatch } = useMatch()
 
 export const smsService = {
 	getAll,
@@ -44,40 +45,24 @@ async function getAll() {
 }
 
 async function sendSMS({ sms_id, sms_body_text, sms_recipient_type_id }) {
-	// get all active accounts
+	// get all active accounts marked sms_recipient
 	const sql = `SELECT
-						a.account_id as id,
-						a.account_id,
-						member_type_id,
-						member_type2_id,
-						member_firstname,
-						member_lastname,
-						CONCAT(member_firstname," ", member_lastname) as title,
-						member_year,
-						account_email,
-						account_email_opening,
-						account_textmsg_opening,
-						account_addr_street,
-						account_addr_street_ext,
-						account_addr_city,
-						account_addr_state,
-						account_addr_country,
-						account_addr_postal,
-						account_addr_phone,
-						newsletter_recipient,
-						mail_recipient,
-						sms_recipient,
-						a.modified_dt,
-						a.modified_dt as dt,
-						a.status
-					FROM inbrc_accounts a
-					WHERE deleted = 0
-					ORDER BY account_email ASC`
+									member_type_id,
+									member_type2_id,
+									account_addr_phone,
+									mail_recipient,
+									newsletter_recipient,
+									sms_recipient
+								FROM inbrc_accounts
+								WHERE deleted = 0 AND status = 1 AND sms_recipient = 1
+								ORDER BY account_addr_phone ASC`
+
 	const accounts = await doDBQueryBuffalorugby(sql)
 	//
 	// make recipients list
 	//
 	function setSMSRecipients(accounts, recipient_type_id) {
+		/* 
 		function newsletterTypeMemberMatch(recipient_type_id, el) {
 			recipient_type_id = parseInt(recipient_type_id)
 			const member_type_id = parseInt(el.member_type_id)
@@ -148,17 +133,20 @@ async function sendSMS({ sms_id, sms_body_text, sms_recipient_type_id }) {
 						include = true
 					break
 			}
-			return el.status && !el.deleted && el.newsletter_recipient && include
+			// return el.status && !el.deleted && el.newsletter_recipient && include
+			return include
 		}
-		return accounts.filter(function (el) {
-			return newsletterTypeMemberMatch(recipient_type_id, el)
+		 */
+		return accounts.filter(function (account) {
+			// return newsletterTypeMemberMatch(recipient_type_id, account)
+			return typeMatch(recipient_type_id, account)
 		})
 	}
 
 	// filter match member types with recipient types
 	const sms_recipients = setSMSRecipients(accounts, sms_recipient_type_id)
-	const rec_cnt = sms_recipients.length
 
+	const rec_cnt = sms_recipients.length
 	sms_recipients.forEach(function (recipient) {
 		sendOneSMS(recipient, sms_body_text)
 	})
@@ -171,8 +159,8 @@ async function sendSMS({ sms_id, sms_body_text, sms_recipient_type_id }) {
 							sms_recp_cnt = ${rec_cnt}
 						WHERE sms_id = ${sms_id}`
 
-	const sms = await doDBQueryBuffalorugby(sql2)
-	return sms
+	await doDBQueryBuffalorugby(sql2)
+	return sms_recipients
 }
 //
 //

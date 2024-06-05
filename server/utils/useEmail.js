@@ -313,7 +313,6 @@ table, td { color: #000000; } </style>
 				newsletter_body_html,
 				newsletter_subject
 			)
-			// await sendEmailHelper(email.to, email.subject, email.message)
 			await sendEmail(email.to, email.subject, email.message)
 			sentlist.push(email.to)
 			i++

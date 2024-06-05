@@ -3,6 +3,7 @@ import mysql from 'mysql2/promise'
 const { doDBQueryBuffalorugby } = useQuery()
 const { getConnectionBuffalorugby } = useDBConnection()
 const { sendNewsletters } = useEmail()
+const { typeMatch } = useMatch()
 
 export const newslettersService = {
 	getAll,
@@ -105,42 +106,24 @@ async function sendNewsletter({
 	newsletter_subject,
 	newsletter_recipient_type_id,
 }) {
-	// get all active accounts
+	// get all active accounts marked to recieve new
 	const sql = `SELECT
-						a.account_id as id,
-						a.account_id,
-						member_type_id,
-						member_type2_id,
-						member_firstname,
-						member_lastname,
-						CONCAT(member_firstname," ", member_lastname) as title,
-						member_year,
-						member_prev_club,
-						account_email,
-						account_email_opening,
-						account_textmsg_opening,
-						account_addr_street,
-						account_addr_street_ext,
-						account_addr_city,
-						account_addr_state,
-						account_addr_country,
-						account_addr_postal,
-						account_addr_phone,
-						newsletter_recipient,
-						mail_recipient,
-						sms_recipient,
-						a.modified_dt,
-						a.modified_dt as dt,
-						a.status
-					FROM inbrc_accounts a
-					WHERE deleted = 0
-					ORDER BY account_email ASC`
+								account_id,
+								member_type_id,
+								member_type2_id,
+								account_email,
+								newsletter_recipient,
+								mail_recipient,
+								sms_recipient
+							FROM inbrc_accounts 
+							WHERE deleted = 0 AND status = 1 AND newsletter_recipient = 1
+							ORDER BY account_email ASC`
 	const accounts = await doDBQueryBuffalorugby(sql)
 
 	// define function to filter match member types with recipient types
 	//
 	function setNewsletterRecipients(accounts, recipient_type_id) {
-		function newsletterTypeMemberMatch(recipient_type_id, el) {
+		/* 		function newsletterTypeMemberMatch(recipient_type_id, el) {
 			recipient_type_id = parseInt(recipient_type_id)
 			const member_type_id = parseInt(el.member_type_id)
 			const member_type2_id = parseInt(el.member_type2_id)
@@ -210,10 +193,11 @@ async function sendNewsletter({
 						include = true
 					break
 			}
-			return el.status && !el.deleted && el.newsletter_recipient && include
-		}
-		return accounts.filter(function (el) {
-			return newsletterTypeMemberMatch(recipient_type_id, el)
+			return include
+		} */
+		return accounts.filter(function (account) {
+			// return newsletterTypeMemberMatch(recipient_type_id, account)
+			return typeMatch(recipient_type_id, account)
 		})
 	}
 	// Call function to make recipients list
@@ -230,6 +214,7 @@ async function sendNewsletter({
 		newsletter_body_html,
 		newsletter_id
 	)
+
 	// log the email send
 	//
 	const sql2 = `UPDATE inbrc_newsletters
@@ -265,7 +250,6 @@ async function getOpenedCount(id) {
 }
 
 async function trackNewsletter(query) {
-	// console.log('IN newsletterService query = ', query)
 	const conn = await getConnectionBuffalorugby()
 
 	try {

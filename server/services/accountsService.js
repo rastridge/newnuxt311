@@ -149,6 +149,7 @@ async function addOne(info) {
 									account_addr_country = ?,
 									account_addr_postal = ?,
 									account_addr_phone = ?,
+									member_prev_club = ?,
 
 									member_show_phone = ?,
 									member_show_addr = ?,
@@ -176,6 +177,7 @@ async function addOne(info) {
 				account_addr_country,
 				account_addr_postal,
 				account_addr_phone,
+				member_prev_club,
 
 				member_show_phone,
 				member_show_addr,
@@ -202,6 +204,7 @@ async function addOne(info) {
 				account_addr_country,
 				account_addr_postal,
 				account_addr_phone,
+				member_prev_club,
 
 				member_show_phone,
 				member_show_addr,
@@ -282,6 +285,7 @@ async function editOne(info) {
 									account_addr_country = ?,
 									account_addr_postal = ?,
 									account_addr_phone = ?,
+									member_prev_club = ?,
 
 									member_show_phone = ?,
 									member_show_addr = ?,
@@ -310,6 +314,7 @@ async function editOne(info) {
 				account_addr_country,
 				account_addr_postal,
 				account_addr_phone,
+				member_prev_club,
 
 				member_show_phone,
 				member_show_addr,
@@ -342,6 +347,7 @@ async function editOne(info) {
 				account_addr_country,
 				account_addr_postal,
 				account_addr_phone,
+				member_prev_club,
 
 				member_show_phone,
 				member_show_addr,

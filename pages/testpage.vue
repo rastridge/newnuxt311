@@ -1,6 +1,7 @@
 <script setup>
 const originaltitle = ref('from testpage')
 const title = ref('originaltitle.value')
+
 </script>
 
 <template>

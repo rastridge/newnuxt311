@@ -40,7 +40,6 @@ export default defineNuxtConfig({
 		'@nuxt/eslint',
 		'nuxt-gtag',
 		'@vueuse/nuxt',
-		'@nuxthub/core',
 	],
 
 	primevue: {

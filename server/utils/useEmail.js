@@ -17,6 +17,7 @@ export default function useEmail() {
 			newsletter_body_html,
 			newsletter_subject
 		) {
+      // console.log('recipient = ', recipient)
 			// this should work if and when email works
 			const TRACKING = `${HOSTING}/newsletters/track?account_id=${recipient.account_id}&newsletter_id=${newsletter_id}`
 			const TRACKINGPIXEL = `<img src="${TRACKING}" height="1" width="1"  />`
@@ -38,7 +39,7 @@ export default function useEmail() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="x-apple-disable-message-reformatting">
   <!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
-  
+
   <style type="text/css">
 
 	.ql-indent-1,
@@ -135,8 +136,8 @@ a[x-apple-data-detectors='true'] {
 }
 
 table, td { color: #000000; } </style>
-  
-  
+
+
 
 </head>
 
@@ -152,20 +153,20 @@ table, td { color: #000000; } </style>
   <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
       <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
-      
+
 <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
   <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
 
  <!-- TITLE -->
- 
+
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 				${TRACKINGPIXEL}
-        
+
   <!--[if mso]><table width="100%"><tr><td><![endif]-->
     <h1 style="margin: 0px; color: #0200e0; line-height: 140%; text-align: center; word-wrap: break-word; font-family: arial black,AvenirNext-Heavy,avant garde,arial; font-size: 36px; font-weight: 400;"><span><span><span><span>Buffalo Rugby News</span></span></span></span></h1>
   <!--[if mso]></td></tr></table><![endif]-->
@@ -181,7 +182,7 @@ table, td { color: #000000; } </style>
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:16px;font-family:arial,helvetica,sans-serif;" align="center">
-        
+
   <!--[if mso]><table width="100%"><tr><td><![endif]-->
     <h5 style="margin: 0px; color: #0200e0;  text-align: center; font-family:arial,helvetica,sans-serif; font-size: 16px; font-weight: 400;"><span><span><span><span>${dt.toDateString()}</span></span></span></span></h5>
   <!--[if mso]></td></tr></table><![endif]-->
@@ -197,7 +198,7 @@ table, td { color: #000000; } </style>
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:18px;font-family:arial,helvetica,sans-serif;" align="center">
-        
+
   <!--[if mso]><table width="100%"><tr><td><![endif]-->
     <h5 style="margin: 0px;   text-align: center; font-family:arial,helvetica,sans-serif; font-size: 18px; font-weight: 400;"><span><span><span><span>${newsletter_subject}</span></span></span></span></h5>
   <!--[if mso]></td></tr></table><![endif]-->
@@ -213,7 +214,7 @@ table, td { color: #000000; } </style>
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-        
+
   <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
     <p style="line-height: 140%;">`
 
@@ -229,7 +230,7 @@ table, td { color: #000000; } </style>
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-        
+
   <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 2px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
     <tbody>
       <tr style="vertical-align: top">
@@ -249,7 +250,7 @@ table, td { color: #000000; } </style>
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-        
+
   <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
     <p style="line-height: 140%;"> <p>This is Your Current Contact Info.</p>
 									<p> Please <a href="${HOSTING}/update/918J275B654I${recipient.account_id}" target="_blank"> Update your info if necessary</a></p>
@@ -280,7 +281,7 @@ table, td { color: #000000; } </style>
     </div>
   </div>
   </div>
-  
+
 
 
     <!--[if (mso)|(IE)]></td></tr></table><![endif]-->

@@ -118,7 +118,7 @@ const emit = defineEmits(['submitted'])
 const state = ref({})
 
 state.value.member_year = $dayjs().format('YYYY')
-state.value.account_addr_phone = null
+state.value.account_addr_phone = ''
 state.value.member_show_phone = '1'
 state.value.account_addr_state = 'NY'
 state.value.account_addr_street_ext = ''
@@ -138,7 +138,6 @@ state.value.member_nickname = ''
 // form handlers
 //
 const submitForm = (state) => {
-	debugger
 	saving.value = true
 	emit('submitted', state)
 }

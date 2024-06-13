@@ -109,13 +109,24 @@ async function sendNewsletter({
 	// get all active accounts marked to recieve new
 	const sql = `SELECT
 								account_id,
+								member_firstname,
+								member_lastname,
+								account_addr_street,
+								account_addr_street_ext,
+								account_addr_city,
+								account_addr_state,
+								account_addr_postal,
+								account_addr_country,
+								account_addr_phone,
+								member_year,
+								member_prev_club,
 								member_type_id,
 								member_type2_id,
 								account_email,
 								newsletter_recipient,
 								mail_recipient,
 								sms_recipient
-							FROM inbrc_accounts 
+							FROM inbrc_accounts
 							WHERE deleted = 0 AND status = 1 AND newsletter_recipient = 1
 							ORDER BY account_email ASC`
 	const accounts = await doDBQueryBuffalorugby(sql)

@@ -40,6 +40,8 @@ export default defineNuxtConfig({
 		'@nuxt/eslint',
 		'nuxt-gtag',
 		'@vueuse/nuxt',
+		'@nuxt/fonts',
+		'@stefanobartoletti/nuxt-social-share',
 	],
 
 	primevue: {

@@ -1,7 +1,13 @@
 <template>
 	<div>
-		<Dropdown v-model="gametype" :options="gametypes" optionLabel="label" optionValue="value"
+		<!-- 		<Dropdown v-model="gametype" :options="gametypes" optionLabel="label" optionValue="value"
 			placeholder="Select Game Type" :pt="{
+				root: { class: 'w-full md:w-20rem' },
+				item: { class: 'text-sm md:text-lg  font-semibold' },
+				input: { class: 'text-sm md:text-lg  font-semibold' },
+			}" /> -->
+		<Listbox v-model="gametype" :options="gametypes" optionLabel="label" optionValue="value" checkmark
+			:highlightOnSelect="false" :pt="{
 				root: { class: 'w-full md:w-20rem' },
 				item: { class: 'text-sm md:text-lg  font-semibold' },
 				input: { class: 'text-sm md:text-lg  font-semibold' },

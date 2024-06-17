@@ -2,22 +2,22 @@
 useSeoMeta({
 	title: 'Buffalo  Rugby Club News',
 	meta: [
-		{
-			hid: "description",
-			name: "description",
-			content:
-				"testing News of the club",
-		},
-		{
-			hid: 'author',
-			name: 'author',
-			content: 'BRC'
-		},
-		{
-			hid: "keywords",
-			name: "keywords",
-			content: "buffalo rugby club"
-		},
+		/* 		{
+					hid: "description",
+					name: "description",
+					content:
+						"testing News of the club",
+				},
+				{
+					hid: 'author',
+					name: 'author',
+					content: 'BRC'
+				},
+				{
+					hid: "keywords",
+					name: "keywords",
+					content: "buffalo rugby club"
+				}, */
 		//Open Graph
 		{ hid: "og-type", property: "og:type", content: "website" },
 		{

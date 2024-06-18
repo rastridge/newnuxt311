@@ -6,15 +6,15 @@ const title = ref('originaltitle.value')
 
 <template>
 
-
-	<p>Go there Go there Go there Go there</p>
-	<!-- <testvmodel :modelValue="title" @update:modelValue="$event => (title = $event) " /> -->
-	<testvmodel v-model="title" />
-	<br>
-	in testpage originaltitle = {{ originaltitle }}
-	<br>
-	in testpage title = {{ title }}
-	<br>
-	<br>
-
+	<div>
+		<p>Go there Go there Go there Go there</p>
+		<!-- <testvmodel :modelValue="title" @update:modelValue="$event => (title = $event) " /> -->
+		<testvmodel v-model="title" />
+		<br>
+		in testpage originaltitle = {{ originaltitle }}
+		<br>
+		in testpage title = {{ title }}
+		<br>
+		<br>
+	</div>
 </template>

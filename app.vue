@@ -6,31 +6,31 @@
 </template>
 
 <script setup>
-	import { useMenuStore } from '~/stores/menuStore'
-	const menuStore = useMenuStore()
+import { useMenuStore } from '~/stores/menuStore'
+const menuStore = useMenuStore()
 
-	useHead({
-		title: 'The Buffalo Rugby Club',
-	})
+useHead({
+	title: 'The Buffalo Rugby Club',
+})
 
-	useSeoMeta({
-		title: 'The Buffalo Rugby Club',
-		ogTitle: 'The Buffalo Rugby Club',
-		description: 'Welcome to the Buffalo Rugby Club',
-		ogDescription: 'Welcome to the Buffalo Rugby Club',
-		ogImage: 'https://buffalorugby.org/bflo_blue.png',
-	})
+useSeoMeta({
+	title: 'The Buffalo Rugby Club',
+	ogTitle: 'The Buffalo Rugby Club',
+	description: 'Welcome to the Buffalo Rugby Club',
+	ogDescription: 'Welcome to the Buffalo Rugby Club',
+	ogImage: 'https://buffalorugby.org/bflo_blue.png',
+})
 
-	//
-	// get custom menu items
-	await menuStore.initCustomMenuItems()
+//
+// get custom menu items
+await menuStore.initCustomMenuItems()
 
-	// stay logged in?
-	/* 	if (localStorage.getItem('auth')) {
-		auth.loginAuto()
-	} */
+// stay logged in?
+/* 	if (localStorage.getItem('auth')) {
+	auth.loginAuto()
+} */
 </script>
 
 <style lang="scss">
-	@use '~/assets/sass/layout/layout';
+@use '~/assets/sass/layout/layout';
 </style>

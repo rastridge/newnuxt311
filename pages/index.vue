@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-useServerSeoMeta({
+useSeoMeta({
 	title: 'Buffalo Rugby Club News',
 	ogTitle: 'Buffalo Rugby Club Website',
 	description: 'Everything you want to know about the Buffalo Rugby Club',

@@ -38,14 +38,6 @@
 </template>
 
 <script setup>
-useSeoMeta({
-	title: 'Buffalo Rugby Club News',
-	ogTitle: 'Buffalo Rugby Club Website',
-	description: 'Everything you want to know about the Buffalo Rugby Club',
-	ogDescription: 'Everything you want to know about the Buffalo Rugby Club',
-	ogImage: 'https://buffalorugby.org/bflo_blue.png',
-	ogUrl: 'https://buffalorugby.org/'
-})
 
 import screen1 from '~/assets/imgs/carousel/2019_nyrc.jpg'
 import screen2 from '~/assets/imgs/carousel/2021NYRCMike.png'

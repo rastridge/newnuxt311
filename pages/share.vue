@@ -1,4 +1,13 @@
 <script setup>
+
+useSeoMeta({
+	title: 'Buffalo Rugby Club News',
+	ogTitle: 'Buffalo Rugby Club Website',
+	description: 'Everything you want to know about the Buffalo Rugby Club',
+	ogDescription: 'Everything you want to know about the Buffalo Rugby Club',
+	ogImage: 'https://buffalorugby.org/bflo_blue.png',
+})
+
 const originaltitle = ref('from testpage')
 const title = ref('originaltitle.value')
 

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: { enabled: false },
+	devtools: { enabled: true },
 	ssr: false,
 	runtimeConfig: {
 		API_SECRET: process.env.API_SECRET,
@@ -76,6 +76,7 @@ export default defineNuxtConfig({
 	gtag: {
 		id: 'G-Z3NSP2KEHY',
 	},
+
 	components: [
 		'~/components/app',
 		'~/components/selectors',

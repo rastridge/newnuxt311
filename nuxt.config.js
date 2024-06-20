@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: { enabled: false },
+	devtools: { enabled: true },
 	ssr: false,
 	runtimeConfig: {
 		API_SECRET: process.env.API_SECRET,
@@ -42,7 +42,6 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'@nuxt/fonts',
 		'@stefanobartoletti/nuxt-social-share',
-		'@nuxtjs/seo',
 	],
 
 	primevue: {
@@ -77,13 +76,7 @@ export default defineNuxtConfig({
 	gtag: {
 		id: 'G-Z3NSP2KEHY',
 	},
-	site: {
-    url: 'https://buffalorugby.org',
-    name: 'Buffalo Rugby Club',
-    description: 'Official Website of the Buffalo Rugby Club',
-    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
-  },
-	ogImage: { enabled: false },
+
 	components: [
 		'~/components/app',
 		'~/components/selectors',

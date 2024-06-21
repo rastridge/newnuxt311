@@ -1,0 +1,23 @@
+# Ignore build output directories
+.nuxt/
+dist/
+
+# Ignore node modules
+node_modules/
+
+# Ignore lock files
+yarn.lock
+package-lock.json
+
+# Ignore logs
+*.log
+
+# Ignore specific file types
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Ignore other generated files
+coverage/

@@ -6,7 +6,6 @@
 
 			<FormKit v-if="peek" label="Raw HTML Article" name="content_body" type="textarea" disabled="true" />
 			<Button label="Toggle raw HTML view" class="p-button-secondary mb-1" @click="toggle" />
-
 			<h6>Content</h6>
 			<div>
 				<input-body app="content" :field="state.content_body" @changeState="changeState"></input-body>

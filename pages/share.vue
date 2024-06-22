@@ -20,7 +20,8 @@
       network="facebook"
       :styled="true"
       :label="false"
-      url="https://buffalorugby.org/archives/news/page/1067"
+      url="https://buffalorugby.org/"
     />
+    <!-- url="https://buffalorugby.org/archives/news/page/1067" -->
   </div>
 </template>

@@ -15,7 +15,7 @@
 
   useSeoMeta({
     title: 'The Buffalo Rugby Club',
-    url: 'localhost:3000/archives/news/html/1067',
+    url: 'https://experimental--buffalorugbyorg.netlify.app//archives/news/html/1067',
 
     ogTitle: 'The Buffalo Rugby Club',
     description: 'Welcome to the Buffalo Rugby Club',

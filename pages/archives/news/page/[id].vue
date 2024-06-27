@@ -1,5 +1,6 @@
 <template>
-	<div>
+  <p>{{ news_data.news_article }}</p>
+  <!-- 	<div>
 
 		<Head>
 			<Title>Buffalo Rugby Club {{ news_data.news_title }}</Title>
@@ -10,19 +11,19 @@
 				<span v-html="news_data.news_article"></span>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </template>
 
 <script setup>
-//
-// Get content id parameter
-//
-const route = useRoute()
-const news_id = ref(route.params.id)
-//
-// Get custom page content
-//
-const { data: news_data } = await useFetch(`/news/${news_id.value}`, {
-	method: 'get',
-})
+  //
+  // Get content id parameter
+  //
+  const route = useRoute()
+  const news_id = ref(route.params.id)
+  //
+  // Get custom page content
+  //
+  const { data: news_data } = await useFetch(`/news/${news_id.value}`, {
+    method: 'get',
+  })
 </script>

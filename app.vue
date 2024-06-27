@@ -15,12 +15,14 @@
 
   useSeoMeta({
     title: 'The Buffalo Rugby Club',
+    url: 'localhost:3000/archives/news/html/1067',
+
     ogTitle: 'The Buffalo Rugby Club',
     description: 'Welcome to the Buffalo Rugby Club',
-    ogDescription: 'All about the Buffalo Rugby Club',
-    ogUrl: 'https://buffalorugby.org/archives/news/page/1067',
-    ogImage:
-      'http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg',
+    ogDescription: 'News',
+    ogUrl:
+      'https://experimental--buffalorugbyorg.netlify.app//archives/news/html/1067',
+    ogImage: 'https://experimental--buffalorugbyorg.netlify.app//bflo_blue.png',
   })
 
   /*   useSeoMeta({

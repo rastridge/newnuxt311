@@ -1,0 +1,69 @@
+/site/news/detail.php id=:id /archives/news/page/:id 
+
+/site/news/news_archive.php /archives/news
+
+/site/stats/detail.php  id=:id /schedule/page/:id 
+
+/site/stats /schedule
+
+/site/contributions /contributions
+
+/site/newsletters/newsletters_archive.php /archives/newsletters
+
+/site/video /videos
+
+/register/men /register
+
+/register/flag /registerflag
+
+/members/officers /officers
+
+/archive/newsletters /archives/newsletters
+
+/archive/documents /archives/documents
+
+/archive/news/ /archives/news
+
+/archive/news/page/:id /archives/news/page/:id
+
+/statss/player_stats /stats/player_stats
+
+/about-us /page/1
+
+/join /page/55
+
+/directions /page/2
+
+/online-payments /payments
+
+/community-service /communityservice
+
+/admin-login /loginpage
+
+/virtual-clubhouse /clubhouse
+
+/schedule-and-results7s /schedule
+
+/schedule-and-results /schedule
+
+/flag-register /registerflag
+
+/wall-of-fame /clubhouse/other/wof
+
+/team-statistics /stats/team_stats
+
+/player-statistics /stats/player_stats
+
+/player-games-history /stats/player_history
+
+/buffalogallery /photos
+
+/v-web/gallery /photos
+
+/gallery3/index.php /photos
+
+/archive /archives/documents
+
+/50th-anniversary /page/58
+
+FallbackResource /

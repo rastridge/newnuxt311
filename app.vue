@@ -14,14 +14,14 @@
   })
 
   useSeoMeta({
-    title: 'The Buffalo Rugby Club',
-    url: 'https://experimental--buffalorugbyorg.netlify.app/archives/news/html/1067',
+    title: 'The Buffalo Rugby Clubx',
+    // url: 'https://experimental--buffalorugbyorg.netlify.app/archives/news/html/1067',
 
-    ogTitle: 'The Buffalo Rugby Club',
-    description: 'Welcome to the Buffalo Rugby Club',
+    ogTitle: 'The Buffalo Rugby Cluby',
+    description: 'News',
     ogDescription: 'News',
-    ogUrl:
-      'https://experimental--buffalorugbyorg.netlify.app/archives/news/html/1067',
+    // ogUrl:
+    //   'https://experimental--buffalorugbyorg.netlify.app/archives/news/html/1067',
     ogImage: 'https://experimental--buffalorugbyorg.netlify.app//bflo_blue.png',
   })
 

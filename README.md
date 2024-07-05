@@ -46,8 +46,10 @@ Netlify site "buffalorugby"
 
 - site sourced from github repository "rastridge/newnuxt311"
 - All ENV variables must be registered
-
-- Set up Netlify custom external domain for site 'buffalorugby.org' via Dreamhost while maintaining ssh and email functions and 'media.buffalorugby.org' on domain buffalorugby.org at Dreamhost
+- All redirects from old website URLs handled by \_redirect file
+- Dreamhost buffalorugby is DNS only - No web hosting
+- Set up Netlify custom external domain for site 'buffalorugby.org' via Dreamhost
+- while maintaining ssh and email and 'media.buffalorugby.org' on domain buffalorugby.org at Dreamhost
 
 ```
 https://superchlorine.com/2021/01/how-to-set-up-netify-custom-domain-via-dreamhost/
@@ -87,11 +89,6 @@ Setup
 DANGER - all images are stored in 'public' - DO NOT OVERWRITE
 
 - Upload js server '~/Code/brc.org.nuxt3/nuxt3-brc-media-api' to dreamhost
-
-```
-rsync -av --delete --exclude "ecosystem.config.js" --exclude "app.js" --exclude "/public" --exclude "logs" --exclude "/node_modules" --exclude ".git" --exclude ".gitignore" ~/Code/brc.org.nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
-```
-
 - enable Proxy server on media.buffalorugby.org
 
 ```
